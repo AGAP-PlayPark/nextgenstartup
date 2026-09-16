@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 21th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 21th [Wed.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Korean and BC Faculty Meeting</h2>
+          <span class="time">08:30 ~ 19:30 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-bottom">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Attendees</h4>
+              <ul>
+                <li>Bellevue College: Dean Fatma Serce and 5 others</li>
+                <li>
+                  Korean Professors: Professor Choongjae Im, Director of the
+                  Immersive Media Center at Keimyung University, and 8 others
+                </li>
+              </ul>
+
+              <h4><span class="number-badge">2</span> Meeting Agenda</h4>
+              <ul>
+                <li>Evaluation of the NextGen Startup Challenge 2026</li>
+                <li>Evaluation of ThinkCity 2026</li>
+                <li>
+                  Future plans to expand collaboration between Korean
+                  universities and universities beyond Bellevue College:
+                  Establishment of a Global Education Innovation Hub, etc.
+                </li>
+                <li>
+                  Collaborative programs in 2026: Ongoing project support,
+                  internships, Jeju National University Summer School, etc.
+                </li>
+                <li>
+                  Preparation schedule for the NextGen Startup Challenge 2027
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="sub-item-media"
+              style="grid-template-columns: repeat(2, 1fr) !important"
+            >
+              <img
+                src="./images/img21-1-1.jpg"
+                style="aspect-ratio: 16/9 !important"
+                loading="lazy"
+              />
+              <img
+                src="./images/img21-1-2.jpg"
+                style="aspect-ratio: 16/9 !important"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 16th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 16th [Fri.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Group Activity</h2>
+          <span class="time">10:00 ~ 11:00, 13:00 ~ 17:00 @U301B</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span> Activity Topic : Hypothesis
+                Testing and Field Research
+              </h4>
+              <ul>
+                <li>
+                  "What is the 'most critical hypothesis' in our business model
+                  that, if proven wrong, would immediately halt the business?"
+                </li>
+                <li>
+                  "Are the questions asking about customers' 'future intentions
+                  (verbs)' or 'past experiences (behaviors)'?"
+                </li>
+                <li>
+                  "Before starting validation, have you established a 'clear
+                  pass/fail metric' that determines success or failure?“
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img16-1-1.jpg" loading="lazy" />
+              <img src="./images/img16-1-2.jpg" loading="lazy" />
+              <img
+                src="./images/img16-1-3.jpg"
+                style="object-position: bottom"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Boeing Outreach : Career Path Social (With Lunch)</h2>
+          <span class="time">11:00 ~ 13:00 @U301B</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span>Event Overview and Purpose
+              </h4>
+              <ul>
+                <li>
+                  Experienced experts will share their backgrounds, daily work,
+                  and key lessons learned during their transition from
+                  university to the workplace.
+                </li>
+                <li>
+                  Practical advice on career paths, workplace readiness, and the
+                  qualities needed for success.
+                </li>
+                <li>
+                  Hear candid stories about workplace challenges, communication,
+                  and work-life balance.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="sub-item-media"
+              style="grid-template-columns: repeat(2, 1fr) !important"
+            >
+              <img
+                src="./images/img16-2-1.jpg"
+                style="aspect-ratio: 16/9"
+                loading="lazy"
+              />
+              <img
+                src="./images/img16-2-2.jpg"
+                style="aspect-ratio: 16/9"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">2</span>Moderator</h4>
+              <span class="description-text">
+                Megs Cambra (Boeing, Aerodynamics Analysis Engineer)
+              </span>
+            </div>
+          </div>
+
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">3</span>Boeing Mentors (19
+                volunteers)
+              </h4>
+              <span class="description-text">
+                Jung Kim, Jessica Lee, Kathy Larsson, Belle Kane, Kanghyun Lee,
+                Nick Fasano, Riley Ranch, Matthew Edwards, Frank Ryou, Noella
+                Silva, Bryan Liberman, Nina Nooteboom, Christopher Useche, Noah
+                Jon, Zoe Silver, Chris Phan, Henil Patil, Elijah Washburn,
+                Joshua Koontz, and Kenyetta Neal Akowa
+              </span>
+            </div>
+          </div>
+
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">4</span>Career Exploration Mentor
+                Introductions and Words of Advice (11:00 AM - 12:00 PM)
+              </h4>
+
+              <div
+                class="sub-item-media"
+                style="grid-template-columns: repeat(2, 1fr)"
+              >
+                <img
+                  src="./images/img16-2-3.jpg"
+                  style="
+                    grid-column: span 1.5 !important;
+                    aspect-ratio: 16/9 !important;
+                  "
+                  loading="lazy"
+                />
+                <img
+                  src="./images/img16-2-4.jpg"
+                  style="
+                    grid-column: span 1.5 !important;
+                    aspect-ratio: 16/9 !important;
+                  "
+                  loading="lazy"
+                />
+              </div>
+              <div class="sub-item-media" style="margin-top: 10px">
+                <img src="./images/img16-2-5.jpg" loading="lazy" />
+                <img src="./images/img16-2-6.jpg" loading="lazy" />
+                <img src="./images/img16-2-7.jpg" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">5</span>Career Exploration Mentoring
+                (12:00 - 1:00 PM)
+              </h4>
+
+              <ul>
+                <li>
+                  Career exploration mentoring is conducted over lunch with
+                  students.
+                </li>
+                <li>
+                  Some mentors provide additional mentoring on weekends or
+                  invite students to their companies.
+                </li>
+              </ul>
+              <div
+                class="sub-item-media"
+                style="margin-top: 10px"
+                loading="lazy"
+              >
+                <img src="./images/img16-2-8.jpg" loading="lazy" />
+                <img src="./images/img16-2-9.jpg" loading="lazy" />
+                <img src="./images/img16-2-10.jpg" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Mock Interview</h2>
+          <span class="time">13:00 ~ 15:00 @U301B</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span> Mock Interview Process
+              </h4>
+              <ul>
+                <li>Students conduct mock interviews based on their CVs.</li>
+                <li>
+                  Post-mock interviews provide mentoring to improve the
+                  interview process.
+                </li>
+              </ul>
+
+              <h4><span class="number-badge">2</span> Mock Interviewers</h4>
+              <ul>
+                <li>Brandon Gallimore (Microsoft)</li>
+                <li>Charles Parker (Mdpanel, Staff Software Engineer)</li>
+                <li>Suneel Parthasarathy (Engineering Leader & Advisor)</li>
+                <li>Christopher Jordan Deugau (Warner Bros. Discovery)</li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img16-3-1.jpg" loading="lazy" />
+              <img src="./images/img16-3-2.jpg" loading="lazy" />
+              <img
+                src="./images/img16-3-3.jpg"
+                style="aspect-ratio: 16/9"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

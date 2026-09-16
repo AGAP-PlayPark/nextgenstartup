@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 17th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 17th [Sat.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Group Activity & Field Research</h2>
+          <span class="time">10:00 ~ 17:00</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <div class="mobile-scroll-hint">↔ Swipe to view details</div>
+
+              <div class="research-table-container">
+                <table class="research-table">
+                  <thead>
+                    <tr>
+                      <th class="col-team"></th>
+                      <th class="col-details" style="text-align: center">
+                        Core Hypotheses and Field Research Design
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 01</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Problem: Private car sharers (Hosts) are severely
+                            stressed by unclear damage (especially hygiene
+                            issues such as cigarette odor) that occurs after
+                            returning their vehicles.
+                          </li>
+                          <li>
+                            Solution: Hosts would prefer a solution that
+                            monitors and prevents vehicle damage in real time,
+                            rather than simply managing it after the fact.
+                          </li>
+                          <li>
+                            Feature: Among temperature, noise, and smoking
+                            detection features, "Smoke Detection" is likely the
+                            most sought-after feature by users.
+                          </li>
+                          <li>
+                            Price: Hosts would be willing to pay a monthly
+                            subscription fee if it is proven to prevent vehicle
+                            damage and reduce cleaning costs.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 02</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Do citizens perceive the existing civil complaint
+                            system as a "one-way submission system"?
+                          </li>
+                          <li>
+                            Do they perceive CITY's community-based structure as
+                            a differentiated way of engaging?
+                          </li>
+                          <li>
+                            Do the upvotes, comments, and rewards structure
+                            positively influence participation and return visit
+                            intentions?
+                          </li>
+                          <li>
+                            Do concerns about the platform structure primarily
+                            stem from operational, trust, and authentication
+                            issues, rather than the concept itself?
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 03</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Collection Efficiency: Minimize unnecessary
+                            collection visits based on waste load volume.
+                          </li>
+                          <li>
+                            Route Optimization: Shorten collection routes with
+                            selective collection using real-time data.
+                          </li>
+                          <li>
+                            Overflow Prevention: Prevent and manage waste
+                            overflow through real-time monitoring
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 04</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Safety: Measure crosswalk travel times and remaining
+                            time by target.
+                          </li>
+                          <li>
+                            Energy: Map streetlight brightness status relative
+                            to pedestrian traffic.
+                          </li>
+                          <li>
+                            Maintenance: Collect photos of broken or abandoned
+                            streetlights.
+                          </li>
+                          <li>
+                            Interview: Guerrilla interviews with pedestrians and
+                            drivers.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 05</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Have you experienced any specific anxiety while
+                            using existing navigation apps?
+                          </li>
+                          <li>
+                            How would route selection change if actual incident
+                            information were available?
+                          </li>
+                          <li>
+                            Are there any criteria or conditions under which you
+                            feel it's acceptable to increase travel time for
+                            safety reasons?
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 06</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Observe and record external factors that cause
+                            delays while using public transportation, and
+                            collect user feedback on perceived inconveniences.
+                          </li>
+                          <li>
+                            Factors users consider when selecting a public
+                            transportation app.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 07</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Validation: Confirm if 'noise' is a real pain point
+                            for residents.
+                          </li>
+                          <li>
+                            Solution Fit: Check if 'Sound Scout' solves their
+                            problems.
+                          </li>
+                          <li>
+                            Privacy Check: Understand resistance to public audio
+                            data collection.
+                          </li>
+                          <li>
+                            Market Viability: Test 'Willingness to Pay' (WTP)
+                            for the service.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 08</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Could you share your experiences where you've faced
+                            significant difficulties with traffic during an
+                            emergency dispatch?
+                          </li>
+                          <li>
+                            When approaching a red light with your sirens on, do
+                            you trust that the signal will 100% change, or do
+                            you always approach with caution, ready to brake
+                            just in case it doesn't?
+                          </li>
+                          <li>
+                            Seattle often has rainy or foggy conditions. Do you
+                            notice any difference in how quickly or reliably the
+                            signals transition during such weather?
+                          </li>
+                          <li>
+                            We understand the current Opticom system utilizes IR
+                            and GPS for signal preemption. Are there any
+                            specific pain points or areas where you feel this
+                            system could be improved to better support your
+                            operations?
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 09</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            How often do you actually get 'blind entry'
+                            (invisible situations) in the field?
+                          </li>
+                          <li>
+                            When making an entry decision (Go/No-Go), what
+                            information do you lack the most right now that you
+                            decide to 'guess'?
+                          </li>
+                          <li>
+                            Do you think why these robot technologies are not
+                            universally employed at the fire scene yet to fire
+                            fighting technologies?
+                          </li>
+                          <li>
+                            Would you be willing to use our assistant robot?
+                          </li>
+                          <li>
+                            Do you see any limitations or areas for improvement
+                            in our technology?
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 10</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Survey of road conditions in the Bellevue and
+                            Seattle areas
+                          </li>
+                          <li>
+                            Driver perception of inconvenience due to road
+                            conditions (potholes and cracks)
+                          </li>
+                          <li>
+                            Driver perception and response to pothole detection
+                            systems
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 11</span>
+                      </td>
+                      <td class="col-details">
+                        <ul class="table-list">
+                          <li>
+                            Resolved questions about the necessity of AK-ACD and
+                            demonstrated its necessity
+                          </li>
+                          <li>
+                            Expected that female novice drivers would feel
+                            anxious when parking or navigating narrow spaces,
+                            such as on busy roads with many pedestrians
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

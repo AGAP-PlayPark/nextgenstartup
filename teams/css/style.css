@@ -1,0 +1,355 @@
+:root {
+  --primary: #6366f1;
+  --text: #0f172a;
+  --muted: rgba(15, 23, 42, 0.72);
+  --line: #eaeef6;
+  --bg-soft: #f8fafc;
+  --chip: rgba(99, 102, 241, 0.1);
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden; /* Prevent horizontal scroll only */
+}
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial;
+  color: var(--text);
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+.card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  overflow: hidden;
+  background: white;
+}
+
+/* --- UPDATED HEADER --- */
+.header {
+  padding: 1.25rem 1.25rem 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.12),
+    rgba(129, 140, 248, 0.12)
+  );
+  border-bottom: 1px solid var(--line);
+
+  /* Flexbox for Image Alignment */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center */
+  gap: 15px;
+}
+
+.header-text {
+  flex: 1; /* Takes up remaining space */
+}
+
+.award-header-img {
+  height: 60px; /* Adjust height to fit nicely */
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  flex-shrink: 0; /* Don't shrink the image */
+}
+
+.kicker {
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: rgba(47, 28, 106, 0.8);
+  font-size: 0.9rem;
+}
+h1 {
+  margin: 0.35rem 0 0 0;
+  font-size: 1.6rem;
+}
+.meta {
+  margin-top: 0.65rem;
+  color: rgba(15, 23, 42, 0.55);
+  font-size: 0.85rem;
+}
+
+.body {
+  padding: 1.25rem;
+}
+.section-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.05rem;
+}
+
+/* Overview */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+.block {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  background: var(--bg-soft);
+}
+.block h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+.block p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+/* Members (UPDATED: compact, no truncation) */
+
+.member-section {
+  margin-top: 0.7rem;
+}
+
+.member-section-title {
+  margin: 0 0 0.45rem 0;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: rgba(15, 23, 42, 0.85);
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+}
+@media (max-width: 900px) {
+  .member-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.member-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  overflow: hidden;
+}
+
+.member-top {
+  display: flex;
+  height: 100%;
+  gap: 0.65rem;
+  padding: 0.65rem;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 250, 252, 1),
+    rgba(255, 255, 255, 1)
+  );
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid #e7eaf3;
+  background: #fff;
+  overflow: hidden;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.avatar svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.member-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.member-name {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1.15;
+  white-space: normal;
+  overflow: visible;
+}
+
+.member-department {
+  margin: 0;
+  line-height: 1.2;
+  color: var(--muted);
+  font-size: 0.68rem;
+  white-space: normal;
+  overflow: visible;
+}
+
+.member-role {
+  width: fit-content;
+  margin: 0.25rem 0 0 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: var(--chip);
+  color: rgba(47, 28, 106, 0.9);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+/* Weekly report style */
+.report-wrap {
+  margin-top: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+}
+.report-header {
+  padding: 0.95rem 1rem;
+  background: #f1f5f9;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.report-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.report-meta {
+  color: rgba(15, 23, 42, 0.6);
+  font-size: 0.85rem;
+}
+
+.week {
+  padding: 1rem;
+  border-bottom: 1px solid #eef2f7;
+}
+.week:last-child {
+  border-bottom: 0;
+}
+.week-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.week-name {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 900;
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 0.8rem;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.done {
+  background: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+.rg-label {
+  font-weight: 900;
+  color: rgba(15, 23, 42, 0.65);
+  font-size: 0.88rem;
+}
+.rg-value {
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+/* PDF viewer (inside a week item) */
+.pdf-viewer {
+  margin-top: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.pdf-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.8rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.pdf-viewer-title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 0.9rem;
+  color: rgba(15, 23, 42, 0.8);
+}
+
+.pdf-viewer-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pdf-link {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #4f46e5;
+  text-decoration: none;
+}
+.pdf-link:hover {
+  text-decoration: underline;
+}
+
+/* 핵심: PDF는 자동 높이 어려움 -> 고정 높이 박스 */
+.pdf-frame {
+  width: 100%;
+  height: 520px; /* 원하는 높이로 조절 */
+  min-height: 360px; /* 모바일 대비 */
+  border: 0;
+  display: block;
+  background: #fff;
+}

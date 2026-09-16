@@ -1,0 +1,676 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NextGen Startup Challenge 2026 Program - Competition topics, activities, and mentoring sessions"
+    />
+    <title>Program | NextGen Startup Challenge 2026</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      :root {
+        --primary: #6366f1;
+        --primary-light: #818cf8;
+        --secondary: #f59e0b;
+        --meteorite-dark: #2f1c6a;
+        --meteorite-light: #d5dfff;
+      }
+      /* Navigation - Override css/style.css */
+      .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: rgba(47, 28, 106, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        padding: 1rem 2rem !important;
+        z-index: 1000 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        box-shadow: none !important;
+        height: auto !important;
+      }
+      .nav-logo {
+        text-decoration: none !important;
+        display: flex !important;
+        align-items: center !important;
+        color: white !important;
+        font-weight: 800 !important;
+        font-size: 1.25rem !important;
+        gap: 0.5rem !important;
+      }
+      .nav-logo img {
+        height: 50px !important;
+        filter: brightness(0) invert(1) !important;
+      }
+      .nav-menu {
+        display: flex !important;
+        list-style: none !important;
+        gap: 2.5rem !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: static !important;
+        background: transparent !important;
+        transform: none !important;
+        flex-direction: row !important;
+        box-shadow: none !important;
+      }
+      .nav-menu li {
+        list-style: none !important;
+      }
+      .nav-menu a {
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+        transition: color 0.3s !important;
+        font-size: 0.95rem !important;
+      }
+      .nav-menu a:hover {
+        color: var(--meteorite-light) !important;
+      }
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+      .nav-toggle span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+      }
+      /* Page header margin to match navbar */
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .page-header {
+        margin-top: 0 !important;
+        padding-top: calc(82px + 1rem) !important;
+      }
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none !important;
+          position: absolute !important;
+          top: 100% !important;
+          left: 0 !important;
+          right: 0 !important;
+          background: var(--meteorite-dark) !important;
+          flex-direction: column !important;
+          padding: 1.5rem !important;
+          gap: 1rem !important;
+        }
+        .nav-menu.active {
+          display: flex !important;
+        }
+        .nav-toggle {
+          display: flex;
+        }
+      }
+
+      .team-tabs {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin: 0 0 1rem 0;
+      }
+
+      .team-tab {
+        border: 1px solid rgba(99, 102, 241, 0.35);
+        background: white;
+        color: #1f2937;
+        padding: 0.6rem 0.9rem;
+        border-radius: 999px;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          transform 0.12s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .team-tab:hover {
+        transform: translateY(-1px);
+        border-color: rgba(99, 102, 241, 0.65);
+      }
+
+      .team-tab.active {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        color: white;
+        border-color: transparent;
+      }
+
+      .team-iframe-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+      }
+
+      /* 핵심: iframe은 auto가 의미 없으니 초기값만 주고 JS가 픽셀로 세팅 */
+      .team-iframe {
+        width: 100%;
+        height: 300px; /* 1px 대신 “초기 안전값” */
+        min-height: 0;
+        border: 1px solid #eef2ff;
+        border-radius: 12px;
+        background: #fff;
+        display: block;
+      }
+
+      iframe.no-inner-scroll {
+        width: 100%;
+        border: 0;
+        display: block;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"
+        ><i
+          class="fas fa-microchip"
+          style="font-size: 1.5rem; margin-right: 0.5rem"
+        ></i
+        >NextGen Startup Challenge 2026</a
+      >
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="activity.html">Activity</a></li>
+      </ul>
+      <div
+        class="nav-toggle"
+        onclick="document.getElementById('navMenu').classList.toggle('active')"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="container">
+        <h1>Projects</h1>
+      </div>
+      <hr style="margin: 0rem 0; border: none; border-top: 2px solid #e2e8f0" />
+    </header>
+
+    <section class="section" style="background: var(--background-alt)">
+      <div class="container" style="max-width: 1000px">
+        <div class="team-tabs" role="tablist" aria-label="Team selector">
+          <button
+            class="team-tab active"
+            type="button"
+            data-team="1"
+            data-src="./teams/team1.html"
+            role="tab"
+            aria-selected="true"
+          >
+            Team 1
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="2"
+            data-src="./teams/team2.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Team 2
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="3"
+            data-src="./teams/team12.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Team 12
+          </button>
+        </div>
+
+        <div class="team-iframe-card">
+          <iframe
+            id="teamFrame"
+            class="team-iframe no-inner-scroll"
+            src="teams/team1.html"
+            title="Team information"
+            loading="lazy"
+            scrolling="no"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1e2a38; color: white; padding: 3rem 2rem 2rem">
+      <!-- (footer 내용 동일) -->
+      <div
+        style="
+          max-width: 900px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        "
+      >
+        <div>
+          <h4
+            style="
+              font-size: 1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              color: white;
+            "
+          >
+            Partners
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              Bellevue College (USA)
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              COSS Immersive Media
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              COSS Future Mobility
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              JNU RISE
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="
+              font-size: 1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              color: white;
+            "
+          >
+            Quick Links
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 0.5rem">
+              <a
+                href="program.html"
+                style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+                >Program</a
+              >
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              <a
+                href="schedule.html"
+                style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+                >Schedule</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="
+              font-size: 1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              color: white;
+            "
+          >
+            Location
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              Bellevue College
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              3000 Landerholm Cir SE
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              Bellevue, WA 98007, USA
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="
+          max-width: 900px;
+          margin: 2rem auto 0;
+          padding-top: 1.5rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          text-align: right;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 0.85rem;
+        "
+      >
+        <p>&copy; 2026 NextGen Startup Challenge. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- <script>
+      const iframe = document.getElementById("teamFrame");
+
+      let ro = null;
+      let mo = null;
+
+      let rafId = 0;
+      let pending = false;
+
+      let lastAppliedHeight = 0;
+      const EPS = 2;
+
+      function disconnectObservers() {
+        if (ro) {
+          ro.disconnect();
+          ro = null;
+        }
+        if (mo) {
+          mo.disconnect();
+          mo = null;
+        }
+      }
+
+      function getDoc() {
+        try {
+          return iframe.contentDocument || iframe.contentWindow.document;
+        } catch (e) {
+          return null;
+        }
+      }
+
+      // scrollHeight가 0 나오는 레이아웃(고정/절대 배치 등) 대비로
+      // getBoundingClientRect 기반 높이도 같이 사용
+      function calcHeightRobust(doc) {
+        const de = doc.documentElement;
+        const body = doc.body;
+
+        const scrollBased = Math.max(
+          body ? body.scrollHeight : 0,
+          body ? body.offsetHeight : 0,
+          de ? de.scrollHeight : 0,
+          de ? de.offsetHeight : 0
+        );
+
+        let rectBased = 0;
+        if (body) rectBased = Math.ceil(body.getBoundingClientRect().height);
+
+        // 둘 중 큰 값 사용 (scrollHeight가 0이어도 rect가 잡히는 케이스 많음)
+        return Math.max(scrollBased, rectBased, 0);
+      }
+
+      function applyHeight(nextH) {
+        nextH = Math.max(1, Math.floor(nextH || 0));
+        if (nextH <= 1) return; // 1px로 굳는 사고 방지
+
+        if (Math.abs(nextH - lastAppliedHeight) <= EPS) return;
+
+        // observer 루프 방지: 적용 순간만 끊기
+        const _ro = ro;
+        const _mo = mo;
+        if (_ro) _ro.disconnect();
+        if (_mo) _mo.disconnect();
+
+        iframe.style.height = nextH + "px";
+        lastAppliedHeight = nextH;
+
+        setTimeout(() => {
+          const doc = getDoc();
+          if (!doc) return;
+
+          if (_ro && doc.body) {
+            ro = _ro;
+            ro.observe(doc.body);
+          }
+          if (_mo) {
+            mo = _mo;
+            mo.observe(doc.body || doc.documentElement, {
+              childList: true,
+              subtree: true,
+              attributes: true,
+              characterData: true,
+            });
+          }
+        }, 0);
+      }
+
+      function requestResize() {
+        if (pending) return;
+        pending = true;
+
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          pending = false;
+
+          const doc = getDoc();
+          if (!doc) return;
+
+          // 1) 먼저 측정 (여기서 0이면 적용/1px 줄이기 하지 않음)
+
+          const measured = calcHeightRobust(doc);
+          console.log(measured);
+          //iframe.style.height = "300px";
+          if (!measured || measured <= 1) {
+            // 너무 이르면 0이 나올 수 있으니 조금 뒤 재시도
+            setTimeout(requestResize, 50);
+            return;
+          }
+
+          // 2) shrink 보장: 적용 직전에만 1px로 줄였다가 바로 적용
+          requestAnimationFrame(() => {
+            console.log("apply");
+            applyHeight(measured);
+          });
+        });
+      }
+
+      function bindAutoResize() {
+        disconnectObservers();
+        lastAppliedHeight = 0;
+
+        const doc = getDoc();
+        if (!doc) return;
+
+        // 초기 보정(로드 직후/폰트/이미지)
+        requestResize();
+        setTimeout(requestResize, 50);
+        setTimeout(requestResize, 200);
+        setTimeout(requestResize, 800);
+
+        // ResizeObserver: body만 관찰 (documentElement 관찰은 루프/과민 반응 유발 잦음)
+        if (doc.body) {
+          ro = new ResizeObserver(requestResize);
+          ro.observe(doc.body);
+        }
+
+        // MutationObserver: 내용 동적 변경 대응
+        mo = new MutationObserver(requestResize);
+        mo.observe(doc.body || doc.documentElement, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          characterData: true,
+        });
+
+        // 이미지 로드
+        doc.addEventListener(
+          "load",
+          (ev) => {
+            if (ev.target && ev.target.tagName === "IMG") requestResize();
+          },
+          true
+        );
+
+        // 폰트 로드
+        if (doc.fonts && doc.fonts.ready) {
+          doc.fonts.ready.then(requestResize).catch(() => {});
+        }
+      }
+
+      function setTeam(btn) {
+        const src = btn.getAttribute("data-src");
+
+        document.querySelectorAll(".team-tab").forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+
+        disconnectObservers();
+        lastAppliedHeight = 0;
+
+        // 전환 중 깜빡임 최소화를 위해 1px 대신 기존 높이를 유지해도 됨.
+        // 여기서는 “전환 시 줄어듦”이 확실하게 보이도록 1px로 리셋만 유지.
+        //iframe.style.height = "300px";
+        iframe.src = src;
+      }
+
+      document.querySelectorAll(".team-tab").forEach((btn) => {
+        btn.addEventListener("click", () => setTeam(btn));
+      });
+
+      iframe.addEventListener("load", bindAutoResize);
+
+      // 초기 탭: src가 이미 team1로 박혀있으니 "UI만 세팅"하고 싶으면
+      // setTeam을 호출하지 말고, 그냥 bindAutoResize만 호출하는 편이 안전함.
+      // (setTeam은 iframe.src를 다시 세팅 -> load 타이밍 꼬일 수 있음)
+      const initialBtn =
+        document.querySelector(".team-tab.active") ||
+        document.querySelector(".team-tab");
+
+      if (initialBtn) {
+        // UI만 반영
+        document.querySelectorAll(".team-tab").forEach((b) => {
+          b.classList.toggle("active", b === initialBtn);
+          b.setAttribute("aria-selected", b === initialBtn ? "true" : "false");
+        });
+
+        // 이미 src가 teams/team1.html 이므로 강제 재할당하지 않음
+        // 대신 현재 로드/로드 후에 자동 바인딩되도록:
+        // - 이미 로드된 상태일 수도 있으니 한 번 시도
+        setTimeout(bindAutoResize, 0);
+      }
+
+      window.addEventListener("resize", requestResize);
+    </script> -->
+    <script>
+      const iframe = document.getElementById("teamFrame");
+
+      window.addEventListener(
+        "message",
+        function (e) {
+          let message = e.data;
+
+          console.log(message.height);
+
+          iframe.style.height = message.height + "px";
+        },
+        false,
+      );
+
+      function setTeam(btn) {
+        const src = btn.getAttribute("data-src");
+
+        document.querySelectorAll(".team-tab").forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+
+        iframe.src = src;
+      }
+
+      document.querySelectorAll(".team-tab").forEach((btn) => {
+        btn.addEventListener("click", () => setTeam(btn));
+      });
+
+      const initialBtn =
+        document.querySelector(".team-tab.active") ||
+        document.querySelector(".team-tab");
+
+      if (initialBtn) {
+        // UI만 반영
+        document.querySelectorAll(".team-tab").forEach((b) => {
+          b.classList.toggle("active", b === initialBtn);
+          b.setAttribute("aria-selected", b === initialBtn ? "true" : "false");
+        });
+      }
+    </script>
+  </body>
+</html>

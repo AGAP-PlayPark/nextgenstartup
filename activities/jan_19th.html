@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 19th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 19th [Mon.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Group Activity & Field Research</h2>
+          <span class="time">10:00 ~ 17:00</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <div class="mobile-scroll-hint">↔ Swipe to view details</div>
+
+              <div class="research-table-container">
+                <table class="research-table four-col">
+                  <thead>
+                    <tr>
+                      <th class="col-team">Team</th>
+                      <th class="col-where">Where</th>
+                      <th class="col-who">Who</th>
+                      <th class="col-what">What</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 01</span>
+                      </td>
+                      <td class="col-where">
+                        Bellevue Square and nearby shopping districts
+                      </td>
+                      <td class="col-who">
+                        Potential customers who own their own cars, have
+                        experience renting them to others
+                      </td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Survey on acceptance and preferred features of the
+                            StatusGO device and service concept
+                          </li>
+                          <li>
+                            Survey on perceived value-added price (WTP) for
+                            service adoption
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 02</span>
+                      </td>
+                      <td class="col-where">Bellevue Square</td>
+                      <td class="col-who">18 local residents</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Positive response: Respondents perceived CITY as a
+                            distinct structure from existing civil service
+                            systems
+                          </li>
+                          <li>
+                            Neutral response: Neutral respondents focused on
+                            feasibility rather than the concept itself
+                          </li>
+                          <li>
+                            Concerns/negative response: Negative responses
+                            primarily focused on differentiation and reliability
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 03</span>
+                      </td>
+                      <td class="col-where">Bellevue and Seattle</td>
+                      <td class="col-who">64 local residents</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Policy/Operational: With the confirmation of citizen
+                            inconveniences, a basis has been established for
+                            designing a priority inspection and response system
+                            centered on the location and time of overflow.
+                          </li>
+                          <li>
+                            Product/Service: Citizens' perceived issues were
+                            identified through "field data," not "qualitative"
+                            analysis.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 04</span>
+                      </td>
+                      <td class="col-where">
+                        NE 4th St & Bellevue Way NE intersection (downtown
+                        Bellevue) and surrounding areas
+                      </td>
+                      <td class="col-who">
+                        Senior citizens, strollers, pedestrians with children,
+                        etc.
+                      </td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Maintenance: A dashboard system that allows AI to
+                            diagnose and report problems without requiring
+                            citizen reports, a risk that has been neglected
+                          </li>
+                          <li>
+                            Insight Summary: LightWise's role extends beyond
+                            assisting vulnerable pedestrians to reassuring all
+                            pedestrians who feel psychologically stressed and
+                            providing compulsory visual information to drivers
+                            who cannot see pedestrians
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 05</span>
+                      </td>
+                      <td class="col-where">Bellevue Square</td>
+                      <td class="col-who">
+                        A female college student living alone at Bellevue
+                        College
+                      </td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Are you aware of the college's safety center service
+                            (Bellevue College Public Safety)? I know about it,
+                            but I've never used it.
+                          </li>
+                          <li>
+                            Because I want to prioritize my own safety over
+                            time.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 06</span>
+                      </td>
+                      <td class="col-where">Bellevue City Bus Stop</td>
+                      <td class="col-who">Passengers using buses in Seattle</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Users prioritize accurate and reliable information
+                            and ease of use over additional features when
+                            choosing apps.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 07</span>
+                      </td>
+                      <td class="col-where">Seattle Cal Anderson Park</td>
+                      <td class="col-who">Park visitors and local residents</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Was your home noisier than advertised? (Reality
+                            check)
+                          </li>
+                          <li>Integration preference (e.g., Zillow)?</li>
+                          <li>Willingness to Pay (WTP)?</li>
+                          <li>Opinion on public microphones (Privacy)?</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 08</span>
+                      </td>
+                      <td class="col-where">Seattle Station 10</td>
+                      <td class="col-who">Firefighter</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Opticom and signaling-related requirements: Opticom
+                            assisted sensing systems are required at most
+                            intersections.
+                          </li>
+                          <li>
+                            Navigation route planning requirements: Route
+                            selection based on weighted comparisons reflecting
+                            road characteristics, rather than simple true or
+                            false decisions.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 09</span>
+                      </td>
+                      <td class="col-where">
+                        Seattle Fire Department (SFD) neighborhood and downtown
+                      </td>
+                      <td class="col-who">Citizens and fire professionals</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Fire professionals repeatedly emphasized that "smoke
+                            obscures visibility and makes it very common to not
+                            know the internal structure at a fire scene."
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 10</span>
+                      </td>
+                      <td class="col-where">Bellevue and Seattle Areas</td>
+                      <td class="col-who"></td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Approximately 75% of survey respondents reported
+                            experiencing potholes while driving.
+                          </li>
+                          <li>
+                            Many reported experiencing sudden lane changes or
+                            slowdowns due to potholes.
+                          </li>
+                          <li>
+                            Most respondents responded positively to the road
+                            crack detection system, valuing its potential for
+                            improving driving safety and early hazard detection.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 11</span>
+                      </td>
+                      <td class="col-where">Bellevue Square</td>
+                      <td class="col-who">Experienced drivers</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Securing data to validate the AK-ACD hypothesis
+                          </li>
+                          <li>Quantifying user needs</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div
+              class="sub-item-media"
+              style="
+                grid-template-columns: repeat(2, 1fr);
+                padding: 20px 0px 0px;
+              "
+            >
+              <img
+                src="./images/img19-1-1.jpg"
+                style="aspect-ratio: 16/9 !important"
+                loading="lazy"
+              />
+              <img
+                src="./images/img19-1-2.jpg"
+                style="aspect-ratio: 16/9 !important"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="sub-item-media" style="padding: 20px 0px 0px">
+              <img src="./images/img19-1-3.jpg" loading="lazy" />
+              <img src="./images/img19-1-4.jpg" loading="lazy" />
+              <img src="./images/img19-1-5.jpg" loading="lazy" />
+              <img src="./images/img19-1-6.jpg" loading="lazy" />
+              <img src="./images/img19-1-7.jpg" loading="lazy" />
+              <img src="./images/img19-1-8.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

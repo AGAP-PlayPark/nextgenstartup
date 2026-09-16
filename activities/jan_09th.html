@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 09th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 9th [Fri.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Workshop - Essential Elements of a Compelling Business Plan</h2>
+          <span class="time">10:00 ~ 12:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-bottom">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Topic</h4>
+              <span class="description-text">
+                Essential Elements of a Compelling Business Plan
+              </span>
+
+              <h4><span class="number-badge">2</span> Instructor</h4>
+              <span class="description-text">
+                Ron Wiener (Venture Mechanics)
+              </span>
+
+              <h4><span class="number-badge">3</span> Key Lecture Content</h4>
+              <ul>
+                <li>
+                  <strong>What We Do :</strong> Ex) 'A Safer, Easier Way To Pay'
+                  (PayPal)
+                </li>
+                <li>
+                  <strong>Problem :</strong> Who is your customer? What problem
+                  do they have today that only you can solve?
+                </li>
+                <li>
+                  <strong>Solution :</strong> What is your solution? Why is it
+                  unique? Why has nobody done this before? What has changed that
+                  allows room for a startup here?
+                </li>
+                <li><strong>Market Size :</strong> SOM, SAM, TAM</li>
+                <li>
+                  <strong>Customers :</strong> What kind of customer discovery
+                  has been conducted? Are there customers that matter with a
+                  high willingness to pay?
+                </li>
+                <li>
+                  <strong>Per Customer Economics :</strong> What is the revenue
+                  model? What are customers willing to pay? What is the
+                  projected lifetime value of these customers (LTV)?
+                </li>
+                <li>
+                  <strong>Go to Market Strategy :</strong> How will you get in
+                  front of the customer? Is there a force-multiplier channel
+                  that can allow this company to get their product to customers
+                  quickly and profitably?
+                </li>
+                <li>
+                  <strong>Customer Acquisition Costs :</strong> What is the
+                  projected customer acquisition cost (CAC)? What will it cost
+                  to service them?
+                </li>
+                <li>
+                  <strong>Competition Overview :</strong> How is the company
+                  positioned in the landscape with all the other companies I've
+                  seen?
+                </li>
+                <li>How are companies in this category valued?</li>
+                <li>
+                  <strong>Technology Status :</strong> If there's a big IP
+                  piece, several slides on the state of technology development.
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img09-1-2.jpg" loading="lazy" />
+              <img src="./images/img09-1-1.jpg" loading="lazy" />
+              <img src="./images/img09-1-3.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Group Activity</h2>
+          <span class="time">13:00 ~ 17:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span> Activity Topic : Problem
+                Redefining
+              </h4>
+              <ul>
+                <li>"Is this the 'root cause' or the 'symptom'?"</li>
+                <li>
+                  "How can we express the problem from a 'different
+                  perspective'?" (Reframing)
+                </li>
+                <li>
+                  "What is the 'job-to-be-done' benefit the customer will gain
+                  by solving this problem?“
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img09-2-1.jpg" loading="lazy" />
+              <img src="./images/img09-2-2.jpg" loading="lazy" />
+              <img src="./images/img09-2-3.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Smart City Project Mentoring</h2>
+          <span class="time">13:00 ~ 15:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-bottom">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Purpose</h4>
+              <span class="description-text">
+                Mentoring on the necessity and importance of smart city projects
+                for each team.
+              </span>
+
+              <h4><span class="number-badge">2</span> Mentors: 14 people</h4>
+              <ul>
+                <li>Eric Fleischman (Proof, CTO)</li>
+                <li>Torsten Grabs (Pacific Data Ventures, Owner)</li>
+                <li>
+                  Akshay Sonawane (Apple, Machine Learning Engineering Manager)
+                </li>
+                <li>
+                  Suneel Parthasarathy (Previously Microsoft & F5, Engineering
+                  Leader)
+                </li>
+                <li>Grace Jun (Boeing, Network Engineer)</li>
+                <li>Eunmi Lee (Nordstrom, Software Engineer)</li>
+                <li>
+                  Sara Farag (Bellevue College, Computer Science, Professor)
+                </li>
+                <li>
+                  Elisa Tran (Bellevue College, Computer Science, Professor)
+                </li>
+                <li>
+                  Wentao Chen (Bellevue College, Computer Science, Professor)
+                </li>
+                <li>
+                  Taesik Kim (Bellevue College, Computer Science, Professor)
+                </li>
+                <li>
+                  Alfred Nehme (Bellevue College, Computer Science, Professor)
+                </li>
+                <li>Choongjae Im (Keimyung Univ., Game Software)</li>
+                <li>Byeongyeop Lee (Pai Chai Univ., Information Security)</li>
+                <li>Hyungseok Kim (Konkuk Univ., Computer Engineering)</li>
+              </ul>
+
+              <h4><span class="number-badge">3</span> Mentoring Content</h4>
+              <ul>
+                <li>Has the appropriate customer or user been selected?</li>
+                <li>
+                  Has the customer or user's pain point been clearly identified?
+                </li>
+                <li>
+                  Has an appropriate method been presented to resolve the
+                  customer or user's problem?
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img09-3-1.jpg" loading="lazy" />
+              <img src="./images/img09-3-2.jpg" loading="lazy" />
+              <img src="./images/img09-3-3.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Networking Party</h2>
+          <span class="time">17:00 ~ 19:00 @L-building Lobby</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Participants</h4>
+              <span class="description-text">
+                Professors and students from Korea University and Bellevue
+                College (84 people)
+              </span>
+
+              <h4><span class="number-badge">2</span> Event Content</h4>
+              <ul>
+                <li>Introductions of professors and teams</li>
+                <li>Icebreakers among students by team</li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img09-4-1.jpg" loading="lazy" />
+              <img src="./images/img09-4-2.jpg" loading="lazy" />
+              <img src="./images/img09-4-3.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,604 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NextGen Startup Challenge 2026 Program - Competition topics, activities, and mentoring sessions"
+    />
+    <title>Activity | NextGen Startup Challenge 2026</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      :root {
+        --primary: #6366f1;
+        --primary-light: #818cf8;
+        --secondary: #f59e0b;
+        --meteorite-dark: #2f1c6a;
+        --meteorite-light: #d5dfff;
+      }
+      /* Navigation - Override css/style.css */
+      .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: rgba(47, 28, 106, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        padding: 1rem 2rem !important;
+        z-index: 1000 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        box-shadow: none !important;
+        height: auto !important;
+      }
+      .nav-logo {
+        text-decoration: none !important;
+        display: flex !important;
+        align-items: center !important;
+        color: white !important;
+        font-weight: 800 !important;
+        font-size: 1.25rem !important;
+        gap: 0.5rem !important;
+      }
+      .nav-logo img {
+        height: 50px !important;
+        filter: brightness(0) invert(1) !important;
+      }
+      .nav-menu {
+        display: flex !important;
+        list-style: none !important;
+        gap: 2.5rem !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: static !important;
+        background: transparent !important;
+        transform: none !important;
+        flex-direction: row !important;
+        box-shadow: none !important;
+      }
+      .nav-menu li {
+        list-style: none !important;
+      }
+      .nav-menu a {
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+        transition: color 0.3s !important;
+        font-size: 0.95rem !important;
+      }
+      .nav-menu a:hover {
+        color: var(--meteorite-light) !important;
+      }
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+      .nav-toggle span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+      }
+      /* Page header margin to match navbar */
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .page-header {
+        margin-top: 0 !important;
+        padding-top: calc(82px + 1rem) !important;
+      }
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none !important;
+          position: absolute !important;
+          top: 100% !important;
+          left: 0 !important;
+          right: 0 !important;
+          background: var(--meteorite-dark) !important;
+          flex-direction: column !important;
+          padding: 1.5rem !important;
+          gap: 1rem !important;
+        }
+        .nav-menu.active {
+          display: flex !important;
+        }
+        .nav-toggle {
+          display: flex;
+        }
+      }
+
+      .team-tabs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 0.75rem;
+        margin: 0 0 1rem 0;
+      }
+
+      .team-tab {
+        border: 1px solid rgba(99, 102, 241, 0.35);
+        background: white;
+        color: #1f2937;
+        padding: 0.6rem 0.9rem;
+        border-radius: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          transform 0.12s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .team-tab:hover {
+        transform: translateY(-1px);
+        border-color: rgba(99, 102, 241, 0.65);
+      }
+
+      .team-tab.active {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        color: white;
+        border-color: transparent;
+      }
+
+      .team-iframe-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+      }
+
+      /* 핵심: iframe은 auto가 의미 없으니 초기값만 주고 JS가 픽셀로 세팅 */
+      .team-iframe {
+        width: 100%;
+        height: 300px; /* 1px 대신 “초기 안전값” */
+        min-height: 0;
+        border: 1px solid #eef2ff;
+        border-radius: 12px;
+        background: #fff;
+        display: block;
+      }
+
+      iframe.no-inner-scroll {
+        width: 100%;
+        border: 0;
+        display: block;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"
+        ><i
+          class="fas fa-microchip"
+          style="font-size: 1.5rem; margin-right: 0.5rem"
+        ></i
+        >NextGen Startup Challenge 2026</a
+      >
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="activity.html">Activity</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+      <div
+        class="nav-toggle"
+        onclick="document.getElementById('navMenu').classList.toggle('active')"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="container">
+        <h1>Activity</h1>
+      </div>
+      <hr style="margin: 0rem 0; border: none; border-top: 2px solid #e2e8f0" />
+    </header>
+
+    <section
+      class="section"
+      style="background: var(--background-alt); padding: 2rem"
+    >
+      <div class="container" style="max-width: 1000px">
+        <div class="team-tabs" role="tablist" aria-label="Team selector">
+          <button
+            class="team-tab"
+            type="button"
+            data-team="1"
+            data-src="./activities/jan_07th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 7th<br />
+            Wed
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="2"
+            data-src="./activities/jan_08th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 8th<br />
+            Thu
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="3"
+            data-src="./activities/jan_09th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 9th<br />
+            Fri
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="4"
+            data-src="./activities/jan_10th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 10th<br />
+            Sat
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="5"
+            data-src="./activities/jan_12th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 12th<br />
+            Mon
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="6"
+            data-src="./activities/jan_13th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 13th<br />
+            Tue
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="7"
+            data-src="./activities/jan_14th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 14th<br />
+            Wed
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="8"
+            data-src="./activities/jan_15th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 15th<br />
+            Thu
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="9"
+            data-src="./activities/jan_16th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 16th<br />
+            Fri
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="10"
+            data-src="./activities/jan_17th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 17th<br />
+            Sat
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="11"
+            data-src="./activities/jan_18th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 18th<br />
+            Sun
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="11"
+            data-src="./activities/jan_19th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 19th<br />
+            Mon
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="11"
+            data-src="./activities/jan_20th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 20th<br />
+            Tue
+          </button>
+
+          <button
+            class="team-tab"
+            type="button"
+            data-team="11"
+            data-src="./activities/jan_21th.html"
+            role="tab"
+            aria-selected="false"
+          >
+            Jan. 21th<br />
+            Wed
+          </button>
+        </div>
+
+        <div class="team-iframe-card">
+          <iframe
+            id="teamFrame"
+            class="team-iframe no-inner-scroll"
+            src="./activities/main.html"
+            title="Team information"
+            loading="lazy"
+            scrolling="no"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1e2a38; color: white; padding: 3rem 2rem 2rem">
+      <!-- (footer 내용 동일) -->
+      <div
+        style="
+          max-width: 900px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        "
+      >
+        <div>
+          <h4
+            style="
+              font-size: 1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              color: white;
+            "
+          >
+            Partners
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              Bellevue College (USA)
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              COSS Immersive Media
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              COSS Future Mobility
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              JNU RISE
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="
+              font-size: 1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              color: white;
+            "
+          >
+            Quick Links
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 0.5rem">
+              <a
+                href="program.html"
+                style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+                >Program</a
+              >
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              <a
+                href="schedule.html"
+                style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+                >Schedule</a
+              >
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              <a
+                href="activity.html"
+                style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+                >Activity</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="
+              font-size: 1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              color: white;
+            "
+          >
+            Location
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              Bellevue College
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              3000 Landerholm Cir SE
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              Bellevue, WA 98007, USA
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="
+          max-width: 900px;
+          margin: 2rem auto 0;
+          padding-top: 1.5rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          text-align: right;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 0.85rem;
+        "
+      >
+        <p>&copy; 2026 NextGen Startup Challenge. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const iframe = document.getElementById("teamFrame");
+
+      window.addEventListener(
+        "message",
+        function (e) {
+          let message = e.data;
+
+          console.log(message.height);
+
+          iframe.style.height = message.height + "px";
+        },
+        false,
+      );
+
+      function setTeam(btn) {
+        const src = btn.getAttribute("data-src");
+
+        document.querySelectorAll(".team-tab").forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+
+        iframe.src = src;
+      }
+
+      document.querySelectorAll(".team-tab").forEach((btn) => {
+        btn.addEventListener("click", () => setTeam(btn));
+      });
+    </script>
+  </body>
+</html>

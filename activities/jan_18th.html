@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 18th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 18th [Sun.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Group Activity & Field Research</h2>
+          <span class="time">10:00 ~ 17:00</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <div class="mobile-scroll-hint">↔ Swipe to view details</div>
+
+              <div class="research-table-container">
+                <table class="research-table four-col">
+                  <thead>
+                    <tr>
+                      <th class="col-team">Team</th>
+                      <th class="col-where">Where</th>
+                      <th class="col-who">Who</th>
+                      <th class="col-what">What</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 01</span>
+                      </td>
+                      <td class="col-where">
+                        Bellevue Square and nearby shopping districts
+                      </td>
+                      <td class="col-who">
+                        Consumers currently using P2P carsharing platforms such
+                        as Turo
+                      </td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Survey of hygiene/safety-related pain points based
+                            on car sharing experience
+                          </li>
+                          <li>
+                            Survey of acceptance and preferred features of the
+                            StatusGO device and service concept
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 02</span>
+                      </td>
+                      <td class="col-where">Bellevue Square</td>
+                      <td class="col-who">18 local residents</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Frequently mentioned keywords: priority / visibility
+                            / participation / progress / motivation
+                          </li>
+                          <li>
+                            Overall, positive responses were predominant, with
+                            negative and concerned opinions mostly emerging
+                            after a thorough understanding of the platform
+                            structure.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 03</span>
+                      </td>
+                      <td class="col-where">Bellevue and Seattle</td>
+                      <td class="col-who">64 local residents</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Residents perceived trash can overflow as an
+                            "inconvenience."
+                          </li>
+                          <li>
+                            A tendency to view it as an issue directly related
+                            to the living environment, rather than simply an
+                            aesthetic issue, was confirmed.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 04</span>
+                      </td>
+                      <td class="col-where">
+                        NE 4th St & Bellevue Way NE intersection (downtown
+                        Bellevue) and surrounding areas
+                      </td>
+                      <td class="col-who">
+                        Senior citizens, strollers, pedestrians with children,
+                        etc.
+                      </td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            The missing 5.2 seconds: The golden time for
+                            survival. Risk exposure rate: 50% of surveyed
+                            individuals remained on the road after the traffic
+                            light ended or arrived just before it ended.
+                          </li>
+                          <li>
+                            Energy efficiency: Wasted light. With the
+                            introduction of AI Smart Dimming, energy savings of
+                            up to 90% are expected in this area.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 05</span>
+                      </td>
+                      <td class="col-where">Bellevue Square</td>
+                      <td class="col-who">
+                        Female college student living alone at Bellevue
+                        University.
+                      </td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Specific experience of feeling anxious or
+                            uncomfortable while using a navigation app: When the
+                            app guided you in a direction that didn't seem to
+                            lead to your destination.
+                          </li>
+                          <li>
+                            The most anxiety-inducing situation or time of day
+                            when traveling alone: After 10 p.m., on a dark
+                            street in an unfamiliar neighborhood.
+                          </li>
+                          <li>
+                            Elements that make you feel safe when walking: When
+                            other people are present,
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 06</span>
+                      </td>
+                      <td class="col-where">Seattle Downtown</td>
+                      <td class="col-who">Passengers using buses in Seattle</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            When choosing a Bus App, what factor do you consider
+                            the most important? Reliability, Speed and
+                            Performance, Usability and Convenience, Extra info
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 07</span>
+                      </td>
+                      <td class="col-where">Seattle Cal Anderson Park</td>
+                      <td class="col-who">Park visitors and local residents</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>Frequency of noise discomfort?</li>
+                          <li>What is the most annoying noise source?</li>
+                          <li>
+                            Is it difficult to quantify/describe noise issues?
+                          </li>
+                          <li>
+                            In which situations would noise data be useful?
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 08</span>
+                      </td>
+                      <td class="col-where">Seattle Station 10</td>
+                      <td class="col-who">Firefighter</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Pain points related to Opticom and signal systems:
+                            Opticom receivers are not installed at all traffic
+                            lights, so it is not always possible to be sure that
+                            Opticom will work.
+                          </li>
+                          <li>
+                            Pain points related to navigation route planning:
+                            When setting a route, factors such as on-site
+                            events, traffic volume, time of day, road width, and
+                            fire truck size must be considered, but the current
+                            navigation system does not reflect these factors.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 09</span>
+                      </td>
+                      <td class="col-where">
+                        Near Bellevue College (BC) and Bellevue Library
+                      </td>
+                      <td class="col-who">Bellevue College student</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            The "firefighter safety" message was the most
+                            compelling persuasive point.
+                          </li>
+                          <li>
+                            Real-time maps and information provided made it easy
+                            to convey the functional value.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 10</span>
+                      </td>
+                      <td class="col-where">Bellevue and Seattle areas</td>
+                      <td class="col-who"></td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            Water infiltration due to heavy rainfall is a major
+                            factor in road surface damage, resulting in frequent
+                            cracks and potholes.
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-team">
+                        <span class="team-badge">Team 11</span>
+                      </td>
+                      <td class="col-where">University of Washington</td>
+                      <td class="col-who">Novice drivers</td>
+                      <td class="col-what">
+                        <ul class="table-list">
+                          <li>
+                            A large-scale survey was conducted to collect
+                            information on "hesitation experiences while
+                            driving."
+                          </li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="sub-item-media" style="padding: 20px 0px 0px">
+              <img src="./images/img18-1-1.jpg" loading="lazy" />
+              <img src="./images/img18-1-2.jpg" loading="lazy" />
+              <img src="./images/img18-1-3.jpg" loading="lazy" />
+              <img src="./images/img18-1-4.jpg" loading="lazy" />
+              <img src="./images/img18-1-5.jpg" loading="lazy" />
+              <img src="./images/img18-1-6.png" loading="lazy" />
+              <img src="./images/img18-1-7.png" loading="lazy" />
+              <img src="./images/img18-1-8.png" loading="lazy" />
+              <img src="./images/img18-1-9.png" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

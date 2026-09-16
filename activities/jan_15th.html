@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 15th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 15th [Thu.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Microsoft headquarters</h2>
+          <span class="time">10:00 ~ 11:30</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span>Visit Microsoft Headquarters
+                and Visitor Center
+              </h4>
+              <ul>
+                <li>
+                  <strong>Exhibition Hall and Museum:</strong> View exhibits
+                  showcasing Microsoft's history, from the first personal
+                  computer (Altair 8800) to the latest AI and cloud computing
+                  technologies.
+                </li>
+                <li>
+                  <strong>Experience Zone:</strong> Interactive displays allow
+                  visitors to experience Microsoft's latest hardware and
+                  software, including Surface devices and Xbox game consoles.
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img
+                src="./images/img15-1-1.jpg"
+                style="grid-column: span 2; aspect-ratio: 21 / 9"
+                loading="lazy"
+              />
+              <img
+                src="./images/img15-1-2.png"
+                style="grid-column: span 1; aspect-ratio: 4 / 3"
+                loading="lazy"
+              />
+              <img
+                src="./images/img15-1-3.png"
+                style="grid-column: span 1; aspect-ratio: 4 / 3"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <div class="sub-item">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">2</span>Special Lecture by an Expert
+              </h4>
+              <ul>
+                <li>
+                  <strong>Instructor:</strong> Agnes Kim, Head of Strategic
+                  Markets Expansion (Xbox) at Microsoft
+                </li>
+                <li>
+                  <strong>Special Lecture Contents:</strong> Introduction to the
+                  process of proposing a strategic project, establishing a new
+                  department, and managing a department at a U.S. company; the
+                  role of the Strategic Markets Expansion department; the
+                  challenges and rewards of working in multiple countries at a
+                  global company; Strategies for finding employment in the U.S.
+                </li>
+              </ul>
+            </div>
+            <!-- Full width media panel for stacked layout -->
+            <div class="sub-item-media">
+              <img src="./images/img15-1-4.jpg" loading="lazy" />
+              <img src="./images/img15-1-5.jpg" loading="lazy" />
+              <img src="./images/img15-1-6.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Visit to Digipen Institute of Technology</h2>
+          <span class="time">12:00 ~ 12:45</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> About the School</h4>
+              <span class="description-text">
+                Through its close relationship with Nintendo, a global gaming
+                company, the university has pioneered gaming education since its
+                inception. Its hands-on, project-focused curriculum is highly
+                regarded in the gaming industry. It has also been offering a
+                dual degree program with Keimyung University since 2008.
+              </span>
+
+              <h4><span class="number-badge">2</span> Campus Tour</h4>
+              <span class="description-text">
+                Project Space Visit - This space is designed to allow all
+                students to freely carry out projects.
+              </span>
+            </div>
+
+            <!-- Shared Images on the RIGHT -->
+            <div class="sub-item-media">
+              <img src="./images/img15-2-1.jpg" loading="lazy" />
+              <img src="./images/img15-2-2.png" loading="lazy" />
+              <img src="./images/img15-2-3.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>T-Mobile</h2>
+          <span class="time">13:00 ~ 16:00</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span>Experience the T-Mobile
+                Headquarters Testing Lab
+              </h4>
+              <span class="description-text">
+                Visit the T-Mobile Launchpad (Device and Technology Lab) at
+                T-Mobile's Bellevue headquarters.
+              </span>
+              <ul>
+                <li>
+                  <strong>Antenna Chambers (Anechoic Chambers):</strong> Tests
+                  how accurately smartphone and IoT device antennas transmit and
+                  receive signals by completely blocking external radio waves
+                  and eliminating internal reflections.
+                </li>
+                <li>
+                  <strong>Network Virtualization & Cloud Lab:</strong> Tests
+                  technology that implements network functions solely through
+                  software, without physical equipment.
+                </li>
+                <li>
+                  <strong>Interoperability Testing Lab (IOT Lab):</strong>
+                  Checks whether the latest devices from manufacturers like
+                  Samsung, Apple, and Google, as well as drones, robots, and
+                  industrial sensors equipped with 5G modules, are fully
+                  compatible with the network.
+                </li>
+                <li>
+                  <strong>5G Innovation Lab:</strong> Tests in real-world
+                  environments how ultra-high frequencies (mmWave) above 28 GHz
+                  penetrate obstacles (walls, glass, etc.) and how far low-band
+                  frequencies can reach.
+                </li>
+                <li>
+                  <strong>Life & Performance Lab:</strong> We tested under
+                  extreme conditions how much battery drain and how much heat
+                  the device generates when using 5G.
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img15-3-1.png" loading="lazy" />
+              <img src="./images/img15-3-2.png" loading="lazy" />
+              <img src="./images/img15-3-3.png" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">2</span>Employment Talk Show</h4>
+              <ul>
+                <li>
+                  Four people from T-Mobile, including a research director, a
+                  developer, and a marketing manager
+                </li>
+                <li>
+                  Talk show to discuss with students what they should focus on
+                  during their college years to prepare for employment.
+                </li>
+              </ul>
+            </div>
+            <!-- Full width media panel for stacked layout -->
+            <div class="sub-item-media">
+              <img src="./images/img15-3-4.jpg" loading="lazy" />
+              <img src="./images/img15-3-5.jpg" loading="lazy" />
+              <img src="./images/img15-3-6.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

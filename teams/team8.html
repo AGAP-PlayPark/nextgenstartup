@@ -1,0 +1,342 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team 08 | Smart Local Traffic Light Management System</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="header">
+          <div class="header-text">
+            <div class="kicker">Team 08</div>
+            <h1>Smart Local Traffic Light Management System</h1>
+          </div>
+          <div>
+            <img
+              src="/images/2nd.png"
+              alt="2nd Award"
+              class="award-header-img"
+              title="Winner: 2nd Award"
+            />
+          </div>
+        </div>
+
+        <div class="body">
+          <!-- Project Overview -->
+          <h2 class="section-title">Project Overview</h2>
+          <div class="overview-grid">
+            <div class="block">
+              <h2>Description</h2>
+              <p>
+                This project proposes a system (SLTLMS) to address the problem
+                of traffic signals going dark during power outages in urban
+                areas like Bellevue, WA. This "all-stop" mode causes congestion,
+                confusion, and increased accident risk. The goal is to allow
+                intersections to maintain limited, safe operation using
+                battery/solar backup and AI-driven local logic.
+              </p>
+            </div>
+            <div class="block">
+              <h2>Main Goals and Objectives</h2>
+              <p>
+                Objectives include designing a microcontroller-based local
+                controller, developing a hybrid power management module,
+                implementing intelligent failover logic, creating a monitoring
+                dashboard, and simulating the deployment.
+              </p>
+            </div>
+            <div class="block">
+              <h2>Expected Output</h2>
+              <p>
+                A prototype smart controller, a backup power management module,
+                a web dashboard for monitoring, an AI/logic engine, and a
+                simulation report.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project Members -->
+          <h2 class="section-title">Project Members</h2>
+          <!-- Advisors -->
+          <section class="member-section" aria-label="Advisors">
+            <h3 class="member-section-title">Advisors</h3>
+            <div class="member-grid">
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Dr. Sara Farag</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">EunYoung Jo</p>
+                    <p class="member-department">
+                      COSS Immersive Media<br />(Keimyung Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Members -->
+          <section class="member-section" aria-label="Members">
+            <h3 class="member-section-title">Members</h3>
+            <div class="member-grid">
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Duke Schnepf</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Cory Maccini</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Nikolaus Henkel</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Ryan Liang</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Seongmin Yun</p>
+                    <p class="member-department">
+                      Electronic Engineering<br />(Kyung Hee Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Jeongmin Jeon</p>
+                    <p class="member-department">
+                      Game software<br />(Keimyung Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Mingyeong Kim</p>
+                    <p class="member-department">
+                      Industrial Design<br />(Pai Chai Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Jinhyeon Kim</p>
+                    <p class="member-department">
+                      IT Management Information<br />(Pai Chai Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Yunhwi Kim</p>
+                    <p class="member-department">
+                      Sociology<br />(Jeju National Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Weekly Progress Report (report format) -->
+          <div class="report-wrap" aria-label="Weekly progress report">
+            <div class="report-header">
+              <p class="report-title">Progress Report</p>
+              <div class="report-meta"></div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">Final Presentation (January 20th, 2026)</p>
+
+                <!-- <span class="status done">Done</span> -->
+              </div>
+              <div>
+                <div class="pdf-viewer" aria-label="Presentation video">
+                  <div class="pdf-viewer-header">
+                    <p class="pdf-viewer-title">Presentation Video (YouTube)</p>
+                  </div>
+
+                  <iframe
+                    class="pdf-frame"
+                    src="https://www.youtube.com/embed/_pY1560PBCs?rel=0"
+                    title="Final Presentation Video"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                    "
+                    allowfullscreen
+                    loading="lazy"
+                    onload="sendHeight()"
+                  ></iframe>
+                </div>
+
+                <div class="pdf-viewer" aria-label="PDF viewer">
+                  <iframe
+                    class="pdf-frame"
+                    src="/teams/pdf/2026-01-20/team_08.pdf#view=FitH&navpanes=0&pagemode=none"
+                    title="Interim Presentation"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">
+                  Interim Presentation (January 14th, 2026)
+                </p>
+
+                <!-- <span class="status done">Done</span> -->
+              </div>
+              <div>
+                <div class="pdf-viewer" aria-label="PDF viewer">
+                  <iframe
+                    class="pdf-frame"
+                    src="/teams/pdf/2026-01-14/team_08.pdf#view=FitH&navpanes=0&pagemode=none"
+                    title="Interim Presentation"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">
+                  Personas and Hypothesis Testing Plan (January 6th, 2026)
+                </p>
+
+                <!-- <span class="status done">Done</span> -->
+              </div>
+              <div>
+                <div class="pdf-viewer" aria-label="PDF viewer">
+                  <iframe
+                    class="pdf-frame"
+                    src="/teams/pdf/team08-01.pdf#view=FitH&navpanes=0&pagemode=none"
+                    title="Personas and Hypothesis Testing Plan"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

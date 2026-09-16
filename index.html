@@ -1,0 +1,1390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NextGen Startup Challenge 2026 - A two-week international competition uniting Korean and U.S. students through innovation and teamwork at Bellevue College."
+    />
+    <title>NextGen Startup Challenge 2026</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --meteorite-dark: #2f1c6a;
+        --meteorite: #3b2182;
+        --meteorite-light: #d5dfff;
+        --primary: #673de6;
+        --primary-light: #7c52f7;
+        --danger: #fc5185;
+        --success: #00b090;
+        --white: #ffffff;
+        --text: #1a1a2e;
+        --text-light: #64648c;
+        --gradient-start: #2f1c6a;
+        --gradient-end: #673de6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(47, 28, 106, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        color: var(--white);
+        font-weight: 800;
+        font-size: 1.25rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-logo img {
+        height: 50px;
+        filter: brightness(0) invert(1);
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+      }
+
+      .nav-menu a:hover {
+        color: var(--meteorite-light);
+      }
+
+      .nav-btn {
+        background: var(--danger);
+        color: white !important;
+        padding: 0.6rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .nav-btn:hover {
+        background: #e6456f;
+        transform: translateY(-2px);
+      }
+
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .nav-toggle span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: auto;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start) 0%,
+          var(--gradient-end) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 2rem 3rem;
+        position: relative;
+        overflow-x: clip;
+        overflow-y: visible;
+      }
+
+      /* Abstract wave background */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 50% at 20% 40%,
+            rgba(103, 61, 230, 0.4) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 80% 20%,
+            rgba(252, 81, 133, 0.3) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse 50% 30% at 60% 80%,
+            rgba(0, 176, 144, 0.2) 0%,
+            transparent 50%
+          );
+        animation: pulse 8s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
+
+      /* Geometric patterns */
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 1300px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(252, 81, 133, 0.2);
+        border: 1px solid rgba(252, 81, 133, 0.4);
+        color: var(--danger);
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 0.6s ease;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+        font-weight: 900;
+        color: var(--white);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        animation: fadeInUp 0.6s ease 0.1s both;
+      }
+
+      .hero h1 span {
+        background: linear-gradient(
+          135deg,
+          var(--meteorite-light) 0%,
+          #fff 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--white);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        animation: fadeInUp 0.6s ease 0.1s both;
+      }
+
+      .hero h2 span {
+        background: linear-gradient(
+          135deg,
+          var(--meteorite-light) 0%,
+          #fff 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: 1.35rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0.5rem;
+        animation: fadeInUp 0.6s ease 0.2s both;
+      }
+
+      .hero-host {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 1.5rem;
+        animation: fadeInUp 0.6s ease 0.3s both;
+      }
+
+      .hero-location {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        color: var(--white);
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeInUp 0.6s ease 0.4s both;
+      }
+
+      .hero-desc {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeInUp 0.6s ease 0.5s both;
+      }
+
+      .hero-eventList {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.5rem;
+        margin-bottom: 1.6rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeInUp 0.6s ease 0.5s both;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeInUp 0.6s ease 0.6s both;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        background: var(--danger);
+        color: var(--white);
+        box-shadow: 0 4px 15px rgba(252, 81, 133, 0.4);
+      }
+
+      .btn-primary:hover {
+        background: #e6456f;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(252, 81, 133, 0.5);
+      }
+
+      .btn-secondary {
+        background: var(--white);
+        color: var(--meteorite-dark);
+      }
+
+      .btn-secondary:hover {
+        background: var(--meteorite-light);
+        transform: translateY(-3px);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--white);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--white);
+      }
+
+      .btn-discord {
+        background: #5865f2;
+        color: white;
+      }
+
+      .btn-discord:hover {
+        background: #4752c4;
+        transform: translateY(-3px);
+      }
+
+      /* Sections */
+      .section {
+        padding: 6rem 2rem;
+      }
+
+      .section-dark {
+        background: var(--meteorite-dark);
+        color: var(--white);
+      }
+
+      .section-gradient {
+        background: linear-gradient(
+          180deg,
+          var(--meteorite-dark) 0%,
+          var(--meteorite) 100%
+        );
+        color: var(--white);
+      }
+
+      .section-light {
+        background: linear-gradient(180deg, #f8f6ff 0%, #fff 100%);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 2.75rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .section-subtitle {
+        font-size: 1.15rem;
+        color: var(--text-light);
+        text-align: center;
+        margin-bottom: 3.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .section-dark .section-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Topics Layout */
+      .topics-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .topics-content {
+        padding-right: 2rem;
+      }
+
+      .topics-title {
+        font-size: 2.75rem;
+        font-weight: 900;
+        color: var(--text);
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .topics-desc {
+        font-size: 1rem;
+        color: var(--text-light);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .topics-label {
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 0.75rem;
+      }
+
+      .topics-list {
+        list-style: none;
+        margin-bottom: 2rem;
+      }
+
+      .topics-list li {
+        position: relative;
+        padding-left: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+      }
+
+      .topics-list li::before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        color: var(--text-light);
+      }
+
+      .btn-register {
+        display: inline-block;
+        background: var(--meteorite-dark);
+        color: white;
+        padding: 1rem 3rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .btn-register:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(103, 61, 230, 0.3);
+      }
+
+      .topics-image {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(47, 28, 106, 0.15);
+      }
+
+      .topics-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Schedule Cards */
+      .schedule-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+
+      .schedule-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .schedule-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .schedule-card .event {
+        font-size: 1.5rem;
+        font-weight: 900;
+        background: linear-gradient(
+          135deg,
+          var(--danger) 0%,
+          var(--primary-light) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+      }
+
+      .schedule-card .date {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+      }
+
+      .schedule-card .desc1 {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .schedule-card .desc2 {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Location */
+      .location-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .location-info {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 3rem;
+        box-shadow: 0 10px 40px rgba(47, 28, 106, 0.1);
+      }
+
+      .location-info h3 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+        color: var(--meteorite-dark);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .location-info h3 i {
+        color: var(--primary);
+      }
+
+      .location-detail {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .location-detail i {
+        color: var(--primary);
+        font-size: 1.25rem;
+        margin-top: 0.2rem;
+      }
+
+      .location-detail p {
+        color: var(--text-light);
+      }
+
+      .location-detail strong {
+        color: var(--text);
+      }
+
+      .room-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .room-tag {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .location-map {
+        border-radius: 24px;
+        overflow: hidden;
+        height: 400px;
+        box-shadow: 0 10px 40px rgba(47, 28, 106, 0.15);
+      }
+
+      .location-map iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Schools Section */
+      .schools-section {
+        text-align: center;
+      }
+
+      .schools-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .schools-group {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 24px;
+        padding: 2.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .schools-group h4 {
+        color: var(--danger);
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .schools-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      .school-tag {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.75rem 1.25rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--white);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.3s;
+      }
+
+      .school-tag:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      /* CTA Section */
+      .cta-section {
+        text-align: center;
+        padding: 5rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--danger) 0%,
+          var(--primary) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 20% 50%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          );
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-section h2 {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-white {
+        background: white;
+        color: var(--primary);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .btn-white:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      .footer {
+        background: #1e2a38;
+        color: var(--white);
+        padding: 3rem 2rem 2rem;
+      }
+
+      .footer-grid {
+        max-width: 900px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .footer-section h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--white);
+      }
+
+      .footer ul {
+        list-style: none;
+      }
+
+      .footer li {
+        margin-bottom: 0.5rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      .footer a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer a:hover {
+        color: var(--white);
+      }
+
+      .footer-bottom {
+        max-width: 900px;
+        margin: 2rem auto 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: right;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.85rem;
+      }
+
+      /* WhatsApp Float Button */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        z-index: 999;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+      }
+
+      .whatsapp-float i {
+        color: white;
+        font-size: 1.75rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .topics-layout {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .topics-content {
+          padding-right: 0;
+          order: 1;
+        }
+
+        .topics-image {
+          order: 2;
+        }
+
+        .schedule-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .location-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .schools-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--meteorite-dark);
+          flex-direction: column;
+          padding: 1.5rem;
+          gap: 1rem;
+        }
+
+        .nav-menu.active {
+          display: flex;
+        }
+
+        .nav-toggle {
+          display: flex;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .topics-title {
+          font-size: 2rem;
+        }
+
+        .schedule-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .footer-bottom {
+          text-align: center;
+        }
+      }
+
+      /* Think City Section */
+      .thinkcity-section {
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .thinkcity-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>')
+          repeat;
+        background-size: 50px 50px;
+        opacity: 0.5;
+      }
+      .thinkcity-content {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .thinkcity-info h2 {
+        color: #00d4ff;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+      }
+      .thinkcity-info h3 {
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+      .thinkcity-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, #fc5185 0%, #f78ca0 100%);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(252, 81, 133, 0.7);
+        }
+        50% {
+          transform: scale(1.02);
+          box-shadow: 0 0 20px 5px rgba(252, 81, 133, 0.3);
+        }
+      }
+      .thinkcity-desc {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+      .thinkcity-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .thinkcity-buttons .btn-register {
+        background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+        color: #1a1a2e;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+      }
+      .thinkcity-buttons .btn-register:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+      }
+      .thinkcity-buttons .btn-learn {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+      }
+      .thinkcity-buttons .btn-learn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: white;
+      }
+
+      .thinkcity-buttons .btn-eventRegister {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .thinkcity-buttons .btn-eventRegister:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: white;
+      }
+
+      .thinkcity-poster {
+        position: relative;
+      }
+      .thinkcity-poster img {
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
+      }
+      .thinkcity-poster:hover img {
+        transform: scale(1.02);
+      }
+      .thinkcity-poster-placeholder {
+        background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+        border-radius: 16px;
+        padding: 3rem;
+        text-align: center;
+        border: 2px dashed rgba(255, 255, 255, 0.2);
+      }
+      .thinkcity-poster-placeholder i {
+        font-size: 4rem;
+        color: #00d4ff;
+        margin-bottom: 1rem;
+      }
+      .thinkcity-poster-placeholder p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1rem;
+      }
+      @media (max-width: 768px) {
+        .thinkcity-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .thinkcity-info h2 {
+          font-size: 2rem;
+        }
+        .thinkcity-buttons {
+          justify-content: center;
+        }
+      }
+      .h2 {
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"
+        ><i
+          class="fas fa-microchip"
+          style="font-size: 1.5rem; margin-right: 0.5rem"
+          >,</i
+        >&nbsp;NextGen Startup Challenge 2026</a
+      >
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="activity.html">Activity</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+      <div
+        class="nav-toggle"
+        onclick="document.getElementById('navMenu').classList.toggle('active')"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-calendar-alt"></i> January 7-20, 2026
+        </div>
+        <h1 style="text-align: center; position: relative; z-index: 2">
+          <span style="white-space: normal">NextGen Startup Challenge 2026</span
+          ><br />
+          <span
+            style="
+              color: var(--meteorite-light);
+              font-size: 0.8em;
+              white-space: normal;
+            "
+            >Smart City and Civic Innovation</span
+          >
+        </h1>
+        <br /><br />
+        <p class="hero-subtitle">
+          Hosted by Bellevue College Computer Science Department
+        </p>
+        <p class="hero-subtitle" style="white-space: normal">
+          and Korean University Partners (COSS Immersive Media, COSS Future
+          Mobility, JNU RISE)
+        </p>
+        <div class="hero-location">
+          <i class="fas fa-map-marker-alt"></i> Bellevue College, Bellevue,
+          Washington, USA
+        </div>
+        <br />
+
+        <div
+          style="
+            position: relative;
+            width: 100%;
+            margin: 0 auto 0;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+          "
+        >
+          <iframe
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border: none;
+            "
+            src="https://www.youtube.com/embed/f75eSzEAegY"
+            title="NextGen Startup Challenge"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <br />
+        <p class="hero-desc" style="max-width: 850px">
+          The NextGen Startup Challenge fosters creativity and teamwork by
+          uniting Korean and U.S. students in an exciting competition focused on
+          Smart City and Civic Innovation. Over two dynamic weeks, participants
+          strengthen global connections while developing forward-looking
+          solutions that enhance urban living and public well-being.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="schedule.html" class="btn btn-outline">
+            <i class="fas fa-calendar"></i> View Schedule
+          </a>
+          <a href="program.html" class="btn btn-outline">
+            <i class="fas fa-info-circle"></i> View Program
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Eventss -->
+    <section class="section section-gradient">
+      <div class="container">
+        <h2 class="section-title" style="color: white">Main Events</h2>
+        <h2 class="section-subtitle" style="color: white">
+          Meet and Greet session: Wednesday, Jan. 7, 2:00 PM, @N201 <br />
+          Kickoff and Orientation: Thursday, Jan. 8, 11:00 AM, @N201
+        </h2>
+
+        <div class="schedule-grid">
+          <div class="schedule-card">
+            <a href="program.html#XRLab">
+              <div class="event">XR Lab Experience</div>
+              <div class="date"><strong>thursday, jan. 8</strong></div>
+            </a>
+          </div>
+
+          <div class="schedule-card">
+            <a href="program.html#workshop">
+              <div class="event">Workshops</div>
+              <div class="date">
+                <p><strong>Friday, Jan 9</strong></p>
+                <p>Essential Elements of a Compelling Business Plan</p>
+                <br />
+                <p><strong>Monday, Jan. 12</strong></p>
+                <p>The Art of the Pitch</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="schedule-card">
+            <a href="thinkcity.html">
+              <div class="event">ThinkCity 2026</div>
+              <div class="date"><strong>Saturday, jan. 10</strong></div>
+              <div class="date">SmartCity One-Day Hackathon</div>
+            </a>
+          </div>
+
+          <div class="schedule-card">
+            <a href="program.html#visit">
+              <div class="event">Industry Visit</div>
+              <div class="date">
+                <p><strong>Tuesday, Jan. 13</strong></p>
+                <p>Boeing, Amazon</p>
+                <br />
+
+                <p><strong>Thursday, Jan. 15</strong></p>
+                <p>Microsoft, T-Mobile</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <br />
+
+        <div class="schedule-grid">
+          <div class="schedule-card">
+            <a href="program.html#mock">
+              <div class="event">Mock Interview</div>
+              <div class="date"><strong>friday, jan. 16</strong></div>
+              <div class="desc1">&nbsp;</div></a
+            >
+          </div>
+
+          <div class="schedule-card">
+            <a href="program.html#Network">
+              <div class="event">Networking Events</div>
+              <div class="date"><strong>Friday, jan. 9</strong></div>
+              <div class="date"><strong>Friday, jan. 16</strong></div>
+              <div class="desc1">&nbsp;</div></a
+            >
+          </div>
+
+          <div class="schedule-card">
+            <a href="program.html#Capstone">
+              <div class="event">Capstone Project Final Presentation</div>
+              <div class="date"><strong>Tuesday, jan. 20</strong></div>
+              <div class="desc1"></div>
+              <div class="desc2"></div
+            ></a>
+          </div>
+        </div>
+        <br />
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="section section-light">
+      <div class="container">
+        <h2 class="section-title">Location</h2>
+        <p class="section-subtitle">
+          The NextGen Startup Challenge takes place in Bellevue, Washington,
+          where students engage in AI innovation while exploring the Bellevue
+          College area.
+        </p>
+
+        <div class="location-wrapper">
+          <div class="location-info">
+            <h3><i class="fas fa-university"></i> Bellevue College</h3>
+            <div class="location-detail">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>3000 Landerholm Cir SE</strong>
+                <p>Bellevue, WA 98007, USA</p>
+              </div>
+            </div>
+          </div>
+          <div class="location-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2691.5!2d-122.148!3d47.584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906c8c37f4a6e7%3A0x8b9c2d7a8c6b5e4f!2sBellevue%20College!5e0!3m2!1sen!2sus!4v1234567890"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Partners</h4>
+          <ul>
+            <li>Bellevue College (USA)</li>
+            <li>COSS Immersive Media</li>
+            <li>COSS Future Mobility</li>
+            <li>JNU RISE</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="activity.html">Activity</a></li>
+
+            <!-- <li>
+              <a href="https://genstartx.org" target="_blank">2025 Program</a>
+            </li> -->
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Location</h4>
+          <ul>
+            <li>Bellevue College</li>
+            <li>3000 Landerholm Cir SE</li>
+            <li>Bellevue, WA 98007, USA</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NextGen Startup Challenge. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

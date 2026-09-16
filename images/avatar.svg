@@ -1,0 +1,23 @@
+<svg viewBox="0 0 64 64" fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img" aria-label="Avatar">
+  <path
+    d="M32 34c8.284 0 15-6.716 15-15S40.284 4 32 4 17 10.716 17 19s6.716 15 15 15Z"
+    fill="#E8EDFF"
+    stroke="#6366F1"
+    stroke-width="2"
+  />
+  <path
+    d="M10 60c2.8-11.2 12.2-18 22-18s19.2 6.8 22 18"
+    fill="#E8EDFF"
+    stroke="#6366F1"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <path
+    d="M22.5 19.5c2.2-3 5.5-4.8 9.5-4.8s7.3 1.8 9.5 4.8"
+    stroke="#818CF8"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+</svg>

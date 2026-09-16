@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NextGen Startup Challenge 2026 Program - Competition topics, activities, and mentoring sessions"
+    />
+    <title>Program | NextGen Startup Challenge 2026</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      :root {
+        --primary: #6366f1;
+        --primary-light: #818cf8;
+        --secondary: #f59e0b;
+        --meteorite-dark: #2f1c6a;
+        --meteorite-light: #d5dfff;
+      }
+      /* Navigation - Override css/style.css */
+      .navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: rgba(47, 28, 106, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        padding: 1rem 2rem !important;
+        z-index: 1000 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        box-shadow: none !important;
+        height: auto !important;
+      }
+      .nav-logo {
+        text-decoration: none !important;
+        display: flex !important;
+        align-items: center !important;
+        color: white !important;
+        font-weight: 800 !important;
+        font-size: 1.25rem !important;
+        gap: 0.5rem !important;
+      }
+      .nav-logo img {
+        height: 50px !important;
+        filter: brightness(0) invert(1) !important;
+      }
+      .nav-menu {
+        display: flex !important;
+        list-style: none !important;
+        gap: 2.5rem !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: static !important;
+        background: transparent !important;
+        transform: none !important;
+        flex-direction: row !important;
+        box-shadow: none !important;
+      }
+      .nav-menu li {
+        list-style: none !important;
+      }
+      .nav-menu a {
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-decoration: none !important;
+        font-weight: 500 !important;
+        transition: color 0.3s !important;
+        font-size: 0.95rem !important;
+      }
+      .nav-menu a:hover {
+        color: var(--meteorite-light) !important;
+      }
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+      .nav-toggle span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+      }
+      /* Page header margin to match navbar */
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .page-header {
+        margin-top: 0 !important;
+        padding-top: calc(82px + 1rem) !important;
+      }
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none !important;
+          position: absolute !important;
+          top: 100% !important;
+          left: 0 !important;
+          right: 0 !important;
+          background: var(--meteorite-dark) !important;
+          flex-direction: column !important;
+          padding: 1.5rem !important;
+          gap: 1rem !important;
+        }
+        .nav-menu.active {
+          display: flex !important;
+        }
+        .nav-toggle {
+          display: flex;
+        }
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      @media (max-width: 992px) {
+        .grid-3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+      .topic-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+      .topic-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+      .topic-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+      .topic-icon i {
+        font-size: 2rem;
+        color: white;
+      }
+      .topic-card h3 {
+        margin-bottom: 0.75rem;
+      }
+      .topic-card p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+      .activity-list {
+        background: white;
+        border-radius: 12px;
+        padding: min(6%, 2rem);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      }
+      .activity-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .activity-item:last-child {
+        border-bottom: none;
+      }
+      .activity-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--background-alt);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        opacity: 0;
+      }
+      .activity-icon i {
+        color: var(--primary);
+        font-size: 1.25rem;
+      }
+      .activity-content h4 {
+        margin: 0 0 0.25rem 0;
+      }
+      .activity-content p {
+        margin: 0;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s;
+      }
+      .btn-primary {
+        background: white;
+        color: var(--dark-bg);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 2px solid #6478ea;
+        color: lightslategrey;
+      }
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .anchor {
+        display: block;
+        height: 63px; /* height of header */
+        margin-top: -63px; /* negative value of the height of the header */
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"
+        ><i
+          class="fas fa-microchip"
+          style="font-size: 1.5rem; margin-right: 0.5rem"
+        ></i
+        >NextGen Startup Challenge 2026</a
+      >
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="activity.html">Activity</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <!-- <li><a href="#">2025 Program <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></li> -->
+      </ul>
+      <div
+        class="nav-toggle"
+        onclick="document.getElementById('navMenu').classList.toggle('active')"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="container">
+        <h1>Program</h1>
+      </div>
+      <hr style="margin: 0rem 0; border: none; border-top: 2px solid #e2e8f0" />
+    </header>
+
+    <!-- XR Lab -->
+    <section class="section" style="background: var(--background-alt)">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem">
+          <div class="activity-list">
+            <h2
+              style="
+                margin-top: 0rem;
+                margin-bottom: 1rem;
+                color: var(--primary);
+              "
+              id="XRLab"
+            >
+              <i class="fas fa-glasses"></i> &nbsp; XR Lab Experience
+            </h2>
+
+            <div class="activity-item">
+              <div class="activity-content">
+                <h4>Hands-on experience with AR/VR technologies</h4>
+                <br />
+                <p>Date & Time: Thursday, Jan. 8. 1:00 PM ~ 4:00 PM</p>
+                <p>Location: XR-Lap (D126 in the library)</p>
+                <p>
+                  <a href="https://forms.gle/8EQX5Xi7sKTdCLxR7">
+                    https://www.bellevuecollege.edu/xrlab/</a
+                  >
+                </p>
+                <br />
+                <p>Group 1: 1:00 PM ~ 1:50 PM</p>
+                <p>Group 2: 2:00 PM ~ 2:50 PM</p>
+                <p>Group 3: 3:00 PM ~ 3:50 PM</p>
+
+                <!-- <br />
+                <div class="hero-buttons">
+                  <a
+                    href="https://forms.gle/XbgdGT3n9zzGti6p9"
+                    class="btn btn-outline"
+                    style="padding: 0.8rem 1.5rem; font-size: 1rem"
+                  >
+                    <i class="fas fa-user-plus"></i>Register</a
+                  >
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workshops -->
+    <section class="section" style="background: var(--background-alt)">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem">
+          <div class="activity-list">
+            <h2
+              style="
+                margin-top: 0rem;
+                margin-bottom: 1rem;
+                color: var(--primary);
+              "
+              id="workshop2"
+            >
+              <i class="fas fa-graduation-cap"></i> &nbsp; Workshops
+            </h2>
+            <div class="activity-item">
+              <div class="activity-content">
+                <h4>Essential Elements of a Compelling Business Plan</h4>
+                <p>
+                  <em
+                    >Technology innovations are great, but they may never see
+                    the light of day without a comprehensive business plan. With
+                    this workshop we'll go over the key elements of a fundable
+                    business idea, from Go To Market (GTM) strategy, to
+                    per-customer and per-unit economics, exit strategies and
+                    more. Learn from a 10x founder what it takes to get your
+                    idea all the way to market.</em
+                  >
+                </p>
+                <br />
+                <p>Date & Time: Friday, Jan. 9. 10:00 AM ~ 12:00 PM</p>
+                <p>Location: N201</p>
+                <br />
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-content">
+                <h4>The Art of the Pitch</h4>
+                <p>
+                  <em
+                    >A great technology play and a compelling business plan are
+                    essential to your startup's success, but you also have to
+                    master the art of pitching it to investors, customers and
+                    other stakeholders. In this workshop we'll work help you
+                    create a concise presentation that will wow your audience
+                    while conveying all the information that your startup will
+                    need to disclose in a first-introduction pitch.</em
+                  >
+                </p>
+                <br />
+                <p>Date &amp; Time: Monday, Jan. 12. 1:00 PM ~ 3:00 PM</p>
+                <p>Location: N201</p>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr
+          style="margin: 0rem 0; border: none; border-top: 2px solid #e2e8f0"
+        />
+      </div>
+    </section>
+
+    <!-- Mentoring -->
+    <section class="section" style="background: var(--background-alt)">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem">
+          <div class="activity-list">
+            <h2
+              style="
+                margin-top: 0rem;
+                margin-bottom: 1rem;
+                color: var(--primary);
+              "
+              id="Mento"
+            >
+              <i class="fas fa-chalkboard-teacher"></i> &nbsp; Expert Mentoring
+            </h2>
+
+            <div class="activity-item">
+              <div class="activity-content">
+                <h4>
+                  Get guidance from BC, high-tech companies and Korean
+                  professors mentors throughout the program.
+                </h4>
+                <br />
+                <p>Date &amp; Time: Friday, Jan. 9. 2:00 PM ~ 5:00 PM</p>
+                <p>Location: N201</p>
+                <p>
+                  Providing advice on student projects and team collaboration
+                </p>
+                <br />
+
+                <p>Date &amp; Time: Saturday, Jan. 10. 9:00 AM ~ 5:00 PM</p>
+                <p>Location: U301</p>
+                <p>ThinkCity 2026 - Smart City One-Day Hackathon</p>
+                <br />
+
+                <p>Date &amp; Time: Wednesday, Jan. 14. 2:00 PM ~ 5:00 PM</p>
+                <p>Location: N201</p>
+                <p>Conducting behavior mock interviews</p>
+                <br />
+
+                <p>Date &amp; Time: Tuesday, Jan. 20. 1:00 PM ~ 5:00 PM</p>
+                <p>Location: N201</p>
+                <p>Feedback on final project presentations</p>
+
+                <!-- <br />
+                <div class="hero-buttons">
+                  <a
+                    href="https://forms.office.com/pages/responsepage.aspx?id=HCVM-UcTLkKz6orFa-_Wy9EzKCgJu7lBp3DZFHJbOjdUMldQRzVZUEs3VjM1Q0MxNkszOFk3MzdCTSQlQCN0PWcu&route=shorturl"
+                    class="btn btn-outline"
+                    style="padding: 0.8rem 1.5rem; font-size: 1rem"
+                  >
+                    <i class="fas fa-user-plus"></i>Mentor/Evaluator Register</a
+                  >
+                  <br /><br />
+                  <p>
+                    <em
+                      >We would greatly appreciate it if those interested in
+                      participating as mentors or evaluators would register.</em
+                    >
+                  </p>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- industry Visits -->
+    <section class="section" style="background: var(--background-alt)">
+      <div class="container">
+        <div class="activity-list">
+          <h2
+            style="margin-top: 0rem; margin-bottom: 1rem; color: var(--primary)"
+            id="visit"
+          >
+            <i class="fas fa-building"></i> &nbsp; Industry Visits
+          </h2>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <h4>Visits to Major Technology Companies in the Seattle Area</h4>
+              <br />
+
+              <p>Date &amp; Time: Tuesday, Jan. 13. 10:00 AM ~ 11:30 AM</p>
+              <p>Company:</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.75rem">
+                <span
+                  style="
+                    background: #f0f0f0;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-weight: 500;
+                  "
+                  ><i class="fas fa-plane" style="margin-right: 0.5rem"></i
+                  >Boeing (Everett Boeing Factory)</span
+                ><br />
+              </div>
+              <br /><br />
+
+              <p>Date &amp; Time: Tuesday, Jan. 13. 2:00 PM ~ 4:00 PM</p>
+              <p>Company:</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.75rem">
+                <span
+                  style="
+                    background: #f0f0f0;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-weight: 500;
+                  "
+                  ><i class="fab fa-amazon" style="margin-right: 0.5rem"></i
+                  >Amazon (Amazon Skill Center - Seattle)</span
+                >
+              </div>
+
+              <br /><br />
+
+              <p>Date &amp; Time: Thursday, Jan. 15. 10:00 AM ~ 11:30 AM</p>
+              <p>Company:</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.75rem">
+                <span
+                  style="
+                    background: #f0f0f0;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-weight: 500;
+                  "
+                  ><i class="fab fa-microsoft" style="margin-right: 0.5rem"></i
+                  >Microsoft (Headquarters)</span
+                >
+              </div>
+              <br /><br />
+
+              <p>Date &amp; Time: Thursday, Jan. 15. 1:00 PM ~ 4:00 PM</p>
+              <p>Company:</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.75rem">
+                <span
+                  style="
+                    background: #f0f0f0;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-weight: 500;
+                  "
+                  ><i class="fas fa-mobile-alt" style="margin-right: 0.5rem"></i
+                  >T-Mobile&nbsp;Innovation Hub</span
+                >
+              </div>
+              <p>1705 136th PL NE | Bellevue, WA 98005</p>
+              <p>
+                <a href="https://innovation.t-mobile.com"
+                  >https://innovation.t-mobile.com/</a
+                >
+              </p>
+              <br />
+              <p>
+                <em
+                  >The visit will include a tour, lab experience, and career
+                  panel.</em
+                >
+              </p>
+              <p>&nbsp;</p>
+              <p>Registration required&nbsp;</p>
+
+              <!-- <br />
+              <div class="hero-buttons">
+                <a
+                  href="https://forms.gle/tx7MjK1j1LyHB4Cm7"
+                  class="btn btn-outline"
+                  style="padding: 0.8rem 1.5rem; font-size: 1rem"
+                >
+                  <i class="fas fa-user-plus"></i>Register</a
+                >
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mock Interviews -->
+    <section class="section" style="background: var(--background-alt)">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem">
+          <div class="activity-list">
+            <h2
+              style="
+                margin-top: 0rem;
+                margin-bottom: 1rem;
+                color: var(--primary);
+              "
+              id="mock"
+            >
+              <i class="fas fa-user-tie"></i> &nbsp; Mock Interview
+            </h2>
+
+            <div class="activity-item">
+              <div class="activity-content">
+                <h4>Practice interview skills with industry professionals</h4>
+                <br />
+                <p>Date &amp; Time: Friday, Jan. 16. 1:00 PM ~ 3:00 PM</p>
+                <p>Location: U301-B</p>
+
+                <br />
+                <div class="hero-buttons">
+                  <a
+                    href="https://forms.gle/Rhe7TyRN3bf39jhS8"
+                    class="btn btn-outline"
+                    style="padding: 0.8rem 1.5rem; font-size: 1rem"
+                  >
+                    <i class="fas fa-user-plus"></i>Register</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Networking Party -->
+    <section class="section" style="background: var(--background-alt)">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem">
+          <div class="activity-list">
+            <h2
+              style="
+                margin-top: 0rem;
+                margin-bottom: 1rem;
+                color: var(--primary);
+              "
+              id="Network"
+            >
+              <i class="fas fa-handshake"></i> &nbsp; Networking Events
+            </h2>
+
+            <div class="activity-item">
+              <div class="activity-content">
+                <h4>
+                  BC and Korean students networking party to build lasting
+                  connections.
+                </h4>
+                <br />
+                <p>Date &amp; Time: Friday, Jan. 9. 5:00 PM ~ 7:00 PM</p>
+                <p>Location: TBD</p>
+                <br />
+                <br />
+                <p>Date &amp; Time: Friday, Jan. 16. 5:00 PM ~ 7:00 PM</p>
+                <p>Location: TBD</p>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr
+          style="margin: 0rem 0; border: none; border-top: 2px solid #e2e8f0"
+        />
+      </div>
+    </section>
+
+    <!-- Capstone Project -->
+
+    <section class="section" style="background: var(--background-alt)">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem">
+          <div class="activity-list">
+            <h2
+              style="
+                margin-top: 0rem;
+                margin-bottom: 1rem;
+                color: var(--primary);
+              "
+              id="Capstone"
+            >
+              <i class="fas fa-puzzle-piece"></i> International Capstone
+              Projects: Smart City and Civic Innovation
+            </h2>
+
+            <div class="activity-item">
+              <div class="activity-content">
+                <p>
+                  <em
+                    >These capstone projects have been conducted online since
+                    October 2025 by students from Bellevue College and Korean
+                    universities. During this challenge period, participating
+                    students will produce the final deliverables through
+                    in-person collaboration. Throughout this process, developers
+                    from major corporations in the Seattle area will participate
+                    as mentors.</em
+                  >
+                </p>
+                <br />
+
+                <p>Online collaboration</p>
+                <p>Date: Oct. 1, 2025 ~ Jan. 5, 2026</p>
+                <br />
+                <p>In-person collaboration</p>
+                <p>Date: Jan. 7, 2026 ~ Jan. 20, 2026</p>
+                <p>Location: N201</p>
+                <br />
+                <p>Final Presentation & Competition</p>
+                <p>Date &amp; Time: Tuesday, Jan. 20. 10:00 AM ~ 5:00 PM</p>
+                <p>Location: N201</p>
+                <br /><br />
+
+                <h4>Project Area</h4>
+                <br />
+                <p>
+                  · Content and apps using AI for urban and civic solutions<br />
+                  · AR/VR for smart city services<br />
+                  · Games for community engagement<br />
+                  · Media art for public spaces<br />
+                  · Autonomous driving technologies<br />
+                  · Future mobility innovations
+                </p>
+
+                <!-- <br /><br />
+                <h4
+                  style="margin-top: 0rem; margin-bottom: 1rem; color: #ff0000"
+                  id="add"
+                >
+                  <i class="fas fa-handshake"></i> If you are a BC computer
+                  science student and wish to join the ongoing project below,
+                  please register
+                </h4>
+
+                <div class="hero-buttons">
+                  <a
+                    href="https://forms.gle/1BppuXZAjZhtdw8f6"
+                    class="btn btn-outline"
+                    style="padding: 0.8rem 1.5rem; font-size: 1rem"
+                  >
+                    <i class="fas fa-user-plus"></i>Register</a
+                  >
+                </div> -->
+                <br />
+                <br />
+
+                <h4>Current Projects in Progress</h4>
+                <br />
+
+                <div class="grid-3" style="gap: 2rem">
+                  <div class="topic-card">
+                    <div class="topic-icon"><i class="fas fa-city"></i></div>
+                    <h3>Digital Twin for Civic Planning</h3>
+                    <p>
+                      Create virtual replicas of urban environments for city
+                      planning and simulation
+                    </p>
+                    <p>&nbsp;</p>
+                    <div style="text-align: left">
+                      <p>
+                        <em
+                          >Develop a 3D digital twin of a section of Bellevue
+                          College (or Bellevue) using open GIS data to visualize
+                          energy consumption, traffic, or public Wi-Fi usage
+                          patterns for better campus(or city) planning
+                          decisions.&nbsp;</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="topic-card">
+                    <div class="topic-icon">
+                      <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Civic Innovation Idea Portal</h3>
+                    <p>
+                      Build platforms for citizens to submit and collaborate on
+                      civic improvement ideas
+                    </p>
+                    <p>&nbsp;</p>
+                    <div style="text-align: left">
+                      <p>
+                        <em
+                          >Develop a web platform where citizens can propose,
+                          vote, and collaborate on civic innovation ideas,
+                          integrating gamification to encourage
+                          participation.&nbsp;</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="topic-card">
+                    <div class="topic-icon"><i class="fas fa-recycle"></i></div>
+                    <h3>Smart Waste Management</h3>
+                    <p>
+                      Develop intelligent systems for efficient waste collection
+                      and recycling
+                    </p>
+                    <p>&nbsp;</p>
+                    <div style="text-align: left">
+                      <p>
+                        <em
+                          >Develop a sensor-based system that monitors waste bin
+                          levels across the city and optimizes collection routes
+                          using real-time data analytics and AI-based
+                          predictions.&nbsp;</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="topic-card" style="">
+                    <div class="topic-icon"><i class="fas fa-parking"></i></div>
+                    <h3>Smart Map with Smart Parking</h3>
+                    <p>
+                      Create mapping solutions with real-time parking
+                      availability information
+                    </p>
+                    <p>&nbsp;</p>
+                    <div style="text-align: left">
+                      <p>
+                        &nbsp;<em
+                          >Develop an application that uses live data or
+                          simulated sensors to help drivers find available
+                          parking spots, estimate availability, and support
+                          payments.&nbsp;</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="topic-card">
+                    <div class="topic-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Smart Streetlight Energy Optimization</h3>
+                    <p>
+                      Build systems to optimize streetlight energy consumption
+                      and maintenance.&nbsp;
+                    </p>
+                    <p>&nbsp;</p>
+                    <div style="text-align: left">
+                      <p>
+                        &nbsp;<em
+                          >A system to promote sustainability by monitoring
+                          streetlight usage and ambient light levels using IoT
+                          sensors. The goal is to dynamically adjust lighting
+                          intensity based on time of day, pedestrian movement,
+                          and weather conditions to save energy.</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="topic-card">
+                    <div class="topic-icon">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Crime Hotspot Analyzer & Safety Router</h3>
+                    <p>
+                      Develop safety applications with crime analysis and safe
+                      route planning.&nbsp;
+                    </p>
+                    <p>&nbsp;</p>
+                    <div style="text-align: left">
+                      <p>
+                        <em
+                          >A data-driven platform that addresses the problem
+                          that standard navigation systems optimize for distance
+                          or time, ignoring personal safety. The goal is to
+                          enhance public safety by collecting and visualizing
+                          crime incident data, identifying hotspots, and
+                          providing safe route recommendations that minimize
+                          exposure to high-risk areas. The prototype case study
+                          is focused on the Greater Seattle–Bellevue Region.</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="topic-card">
+                    <div class="topic-icon"><i class="fas fa-bus"></i></div>
+                    <h3>Smart Transit Reliability & Connectivity</h3>
+                    <p>
+                      Create systems to improve public transit reliability and
+                      connectivity.&nbsp;
+                    </p>
+                    <p>&nbsp;</p>
+
+                    <div style="text-align: left">
+                      <p>
+                        <em
+                          >A data-driven platform to address recurring
+                          challenges for public transit riders in cities like
+                          Bellevue, including unpredictable arrivals, poor
+                          coordination, and missed transfers. The goal is to use
+                          real-time open transit data and predictive AI to
+                          improve commuter experience, reliability, and citywide
+                          mobility planning. The prototype phase will focus on
+                          Bellevue College and surrounding routes as a
+                          controlled testbed.&nbsp;</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="topic-card">
+                    <div class="topic-icon">
+                      <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3>Urban Sound Classification & Noise Monitoring</h3>
+                    <p>
+                      Build AI-powered systems for urban noise monitoring and
+                      classification.&nbsp;
+                    </p>
+                    <p>&nbsp;</p>
+                    <div style="text-align: left">
+                      <p>
+                        <em
+                          >This project proposes an Urban Sound Classification
+                          System using Audio Machine Learning (ML) and IoT
+                          microphone nodes. The problem is that traditional
+                          noise meters measure decibel levels but cannot
+                          identify the source of the sound (e.g., traffic vs.
+                          construction vs. gunshots). The goal is to monitor,
+                          classify, and map city noise patterns in real time to
+                          provide data-driven insights for urban planners and
+                          public safety agencies. The prototype case study is
+                          focused on Bellevue, Washington.&nbsp;</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="topic-card">
+                    <div class="topic-icon">
+                      <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <h3>Smart Local Traffic Light Management</h3>
+                    <p>
+                      Develop intelligent traffic signal control systems for
+                      local intersections.&nbsp;
+                    </p>
+                    <p>&nbsp;</p>
+                    <div style="text-align: left">
+                      <p>
+                        <em
+                          >This project proposes a system (SLTLMS) to address
+                          the problem of traffic signals going dark during power
+                          outages in urban areas like Bellevue, WA. This
+                          "all-stop" mode causes congestion, confusion, and
+                          increased accident risk. The goal is to allow
+                          intersections to maintain limited, safe operation
+                          using battery/solar backup and AI-driven local
+                          logic.&nbsp;</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Auto motive -->
+                  <!-- <div class="topic-card">
+        <div class="topic-icon"><i class="fas fa-car-crash"></i></div>
+        <h3>AK-ACD(Ambiguous Clearance Detection) ADAS</h3>
+		    <div style="text-align: left;"> 
+          <p><em>Next-generation ADAS technology aims to enhance safety for large vehicles in confined spaces like narrow alleyways and parking lots, where limited visibility often leads to collisions. This issue affects both novice and experienced drivers, particularly in commercial trucking, where minor collisions can result in significant accidents or delays. The project focuses on delivering intuitive feedback to drivers by utilizing camera and mono depth map technology, which accurately measures space dimensions and compares them to the vehicle's size and safety margins.</em></p>
+        </div>
+		 </div> -->
+
+                  <div class="topic-card">
+                    <div class="topic-icon"><i class="fas fa-eye"></i></div>
+                    <h3>DepthPro-based Ambiguous Clearance Detection ADAS</h3>
+                    <div style="text-align: left">
+                      <p>
+                        <em>
+                          Estimate accurate depth information from single camera
+                          input Cluster objects around the vehicle based on
+                          estimated depth Extract boundaries for clustered
+                          objects Calculate and visualize actual minimum
+                          distance between objects Demonstrate potential for
+                          ADAS functionality expansion</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- <div class="topic-card">
+          <div class="topic-icon"><i class="fas fa-file-video"></i></div>
+          <h3>Autonomous Vehicle Perception and Control using Camera and LiDAR</h3>
+			<div style="text-align: left;">
+          <p><em>This project aims to develop an autonomous driving system using a scale-model car on an indoor track. The vehicle perceives its environment through a camera and LiDAR sensor and navigates the course autonomously by performing key driving tasks such as lane keeping, obstacle avoidance (static and dynamic), traffic signal recognition, and parking. The core focus is on reliable lane-following, which serves as the foundation for implementing more complex driving behaviors</em>.</p>
+        </div>
+		 </div> -->
+
+                  <div class="topic-card">
+                    <div class="topic-icon"><i class="fas fa-bus"></i></div>
+                    <h3>
+                      Autonomous Vehicle Perception and Control Using Camera and
+                      LIDAR
+                    </h3>
+                    <div style="text-align: left">
+                      <p>
+                        <em
+                          >Perception is a vital aspect of autonomous driving,
+                          accounting for most system complexity, with around 90%
+                          of the challenge focused on environmental sensing and
+                          understanding. Key issues include reduced camera
+                          obstacle detection accuracy in low light and LiDAR's
+                          limited sensing range despite being less affected by
+                          lighting. The main challenge is achieving reliable
+                          perception across various environments for safe
+                          driving. The project aims to test sensor-based
+                          autonomous driving on a small-scale vehicle, focusing
+                          on lane keeping, traffic signal recognition, obstacle
+                          avoidance, and parking execution.</em
+                        >
+                      </p>
+                      <p>&nbsp;</p>
+                    </div>
+                  </div>
+
+                  <!-- <div class="topic-card">
+          <div class="topic-icon"><i class="fas fa-fire-alt"></i></div>
+          <h3>Development of a fire and security surveillance system based on Ros</h3>
+			<div style="text-align: left;">
+              <p><em>In this project, a mobile robot designed on the ROS communication framework detects fire and motion using integrated smoke, temperature, flame, and PIR sensors. It enables early fire and intrusion detection in industrial settings, relaying sensor data in real time through ROS. The robot autonomously patrols areas for safety monitoring and communicates results wirelessly. Findings confirm that the system reliably detects fire and human motion, validating the effectiveness of the ROS-based modular architecture for disaster response and security surveillance.&nbsp;</em></p>
+            </div>
+		 </div> -->
+
+                  <div class="topic-card">
+                    <div class="topic-icon"><i class="fas fa-car-alt"></i></div>
+                    <h3>
+                      Development of a fire and security surveillance system
+                      based on Robot
+                    </h3>
+                    <div style="text-align: left">
+                      <p>
+                        <em
+                          >Autonomous driving technology allows machines to
+                          navigate without human input using sensors, cameras,
+                          radar, and AI. It aims to enhance safety, reduce
+                          accidents, and improve mobility and logistics. Looking
+                          ahead, it will play a vital role in the smart mobility
+                          era for both vehicles and robots. Additionally, mobile
+                          and autonomous systems are needed to monitor safety in
+                          industrial sites to mitigate risks of fire and
+                          intrusion, despite a decline in industrial site
+                          fires.</em
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr
+          style="margin: 0rem 0; border: none; border-top: 2px solid #e2e8f0"
+        />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1e2a38; color: white; padding: 3rem 2rem 2rem">
+      <div
+        style="
+          max-width: 900px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        "
+      >
+        <div>
+          <h4
+            style="
+              font-size: 1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              color: white;
+            "
+          >
+            Partners
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              Bellevue College (USA)
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              COSS Immersive Media
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              COSS Future Mobility
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              JNU RISE
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="
+              font-size: 1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              color: white;
+            "
+          >
+            Quick Links
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li style="margin-bottom: 0.5rem">
+              <a
+                href="program.html"
+                style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+                >Program</a
+              >
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              <a
+                href="schedule.html"
+                style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+                >Schedule</a
+              >
+            </li>
+            <li style="margin-bottom: 0.5rem">
+              <a
+                href="activity.html"
+                style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+                >Activity</a
+              >
+            </li>
+            <!-- <li style="margin-bottom: 0.5rem;"><a href="https://genstartx.org" target="_blank" style="color: rgba(255,255,255,0.7); text-decoration: none;">2025 Program</a></li> -->
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="
+              font-size: 1rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              color: white;
+            "
+          >
+            Location
+          </h4>
+          <ul style="list-style: none; padding: 0; margin: 0">
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              Bellevue College
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              3000 Landerholm Cir SE
+            </li>
+            <li
+              style="
+                margin-bottom: 0.5rem;
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.9rem;
+              "
+            >
+              Bellevue, WA 98007, USA
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="
+          max-width: 900px;
+          margin: 2rem auto 0;
+          padding-top: 1.5rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          text-align: right;
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 0.85rem;
+        "
+      >
+        <p>&copy; 2026 NextGen Startup Challenge. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        document.querySelector(".nav-menu").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

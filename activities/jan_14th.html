@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 14th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 14th [Wed.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Group Activity</h2>
+          <span class="time">10:00 ~ 15:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span> Activity Topic : Preparing
+                for the Interim Presentation
+              </h4>
+              <ul>
+                <li>
+                  Have you identified the right customers and pain points?
+                </li>
+                <li>
+                  Have you identified the root cause of the problem and defined
+                  it from a different perspective?
+                </li>
+                <li>
+                  Has a suitable prototype been created for the customer and the
+                  redefined solution?
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img
+                src="./images/img14-1-1.jpg"
+                style="grid-column: span 2; aspect-ratio: 21 / 9"
+                loading="lazy"
+              />
+              <img
+                src="./images/img14-1-2.jpg"
+                style="grid-column: span 2; aspect-ratio: 21 / 9"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Interim Presentation</h2>
+          <span class="time">15:00 ~ 17:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-bottom">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Judges</h4>
+              <ul>
+                <li>Charles Parker (Mdpanel, Staff Software Engineer)</li>
+                <li>
+                  Akshay Sonawane (Apple, Machine Learning Engineering Manager)
+                </li>
+                <li>PJ Rodriguez (City of Bellevue)</li>
+                <li>Daniel Lai (City of Bellevue, Smart Mobility Manager)</li>
+                <li>Eunmi Lee (Nordstrom, Software Engineer)</li>
+                <li>Grace Jun (Boeing, System Design Engineer)</li>
+                <li>
+                  Alfred Nehme (Bellevue College, Computer Science, Professor)
+                </li>
+                <li>
+                  Kyujong Park (Kookmin Univ, Automotive Engineering School,
+                  Professor)
+                </li>
+              </ul>
+
+              <h4>
+                <span class="number-badge">2</span> Summary of the Evaluation
+                and Mentoring
+              </h4>
+              <ul>
+                <li>
+                  Has the need for customers and consumers been identified?
+                </li>
+                <li>
+                  What impact does this have on the development of smart cities?
+                </li>
+                <li>
+                  Is the solution to the problem realistically feasible and
+                  feasible?
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img14-2-1.jpg" loading="lazy" />
+              <img src="./images/img14-2-2.jpg" loading="lazy" />
+              <img src="./images/img14-2-3.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Special lecture on employment</h2>
+          <span class="time">17:00 ~ 18:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Instructor</h4>
+              <span class="description-text">
+                Grace Jun (Boeing, System Design Engineer)
+              </span>
+
+              <h4><span class="number-badge">2</span> Topic</h4>
+              <span class="description-text">
+                From Campus to Career: Surviving the US Tech Job Market
+              </span>
+
+              <h4><span class="number-badge">3</span> Content</h4>
+              <span class="description-text">
+                Instructor introduction, current field of work, considerations
+                before job hunting, job search strategies
+              </span>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img14-3-1.jpg" loading="lazy" />
+              <img src="./images/img14-3-2.jpg" loading="lazy" />
+              <img src="./images/img14-3-3.jpg" loading="lazy" />
+              <img src="./images/img14-3-4.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

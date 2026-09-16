@@ -1,0 +1,350 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team 03 | Smart Waste Management</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="header">
+          <div class="header-text">
+            <div class="kicker">Team 03</div>
+            <h1>Smart Waste Management</h1>
+          </div>
+          <div>
+            <img
+              src="/images/3rd.png"
+              alt="3rd Award"
+              class="award-header-img"
+              title="Winner: 3rd Award"
+            />
+            <img
+              src="/images/Creativity.png"
+              alt="Creativity Award"
+              class="award-header-img"
+              title="Winner: Creativity Award"
+            />
+          </div>
+        </div>
+
+        <div class="body">
+          <!-- Project Overview -->
+          <h2 class="section-title">Project Overview</h2>
+          <div class="overview-grid">
+            <div class="block">
+              <h2>Description</h2>
+              <p>
+                Develop a sensor-based system that monitors waste bin levels
+                across the city and optimizes collection routes using real-time
+                data analytics and AI-based predictions.
+              </p>
+            </div>
+            <div class="block">
+              <h2>Expected Output</h2>
+              <p>
+                A working prototype with IoT sensor simulation, a web dashboard
+                for city operators, and route optimization algorithm results.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project Members -->
+          <h2 class="section-title">Project Members</h2>
+
+          <!-- Advisors -->
+          <section class="member-section" aria-label="Advisors">
+            <h3 class="member-section-title">Advisors</h3>
+            <div class="member-grid">
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Alfred Nehme</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Choongjae Im</p>
+                    <p class="member-department">
+                      Game Software<br />(Keimyung Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Members -->
+          <section class="member-section" aria-label="Members">
+            <h3 class="member-section-title">Members</h3>
+            <div class="member-grid">
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Berke Can</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Masha Volska</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Paul Churchill</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Nhieu Phu</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Hoheon Lyu</p>
+                    <p class="member-department">
+                      Information Security<br />(Pai Chai Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Hyeonmin Lee</p>
+                    <p class="member-department">
+                      Game Contents<br />(Jeonju Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Seeun Seo</p>
+                    <p class="member-department">
+                      IT Management Information<br />(Pai Chai Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Seungwoo Choi</p>
+                    <p class="member-department">
+                      Game Contents<br />(Jeonju Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Insoo Kim</p>
+                    <p class="member-department">
+                      Economics<br />(Jeju National Univ)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Hwanje Lim</p>
+                    <p class="member-department">
+                      Culture Contents<br />(Jeonju University)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Weekly Progress Report (report format) -->
+          <div class="report-wrap" aria-label="Weekly progress report">
+            <div class="report-header">
+              <p class="report-title">Progress Report</p>
+              <div class="report-meta"></div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">Final Presentation (January 20th, 2026)</p>
+
+                <!-- <span class="status done">Done</span> -->
+              </div>
+              <div>
+                <div class="pdf-viewer" aria-label="Presentation video">
+                  <div class="pdf-viewer-header">
+                    <p class="pdf-viewer-title">Presentation Video (YouTube)</p>
+                  </div>
+
+                  <iframe
+                    class="pdf-frame"
+                    src="https://www.youtube.com/embed/lm5LRRXkM2s?rel=0"
+                    title="Final Presentation Video"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                    "
+                    allowfullscreen
+                    loading="lazy"
+                    onload="sendHeight()"
+                  ></iframe>
+                </div>
+
+                <div class="pdf-viewer" aria-label="PDF viewer">
+                  <iframe
+                    class="pdf-frame"
+                    src="/teams/pdf/2026-01-20/team_03.pdf#view=FitH&navpanes=0&pagemode=none"
+                    title="Interim Presentation"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">
+                  Interim Presentation (January 14th, 2026)
+                </p>
+
+                <!-- <span class="status done">Done</span> -->
+              </div>
+              <div>
+                <div class="pdf-viewer" aria-label="PDF viewer">
+                  <iframe
+                    class="pdf-frame"
+                    src="/teams/pdf/2026-01-14/team_03.pdf#view=FitH&navpanes=0&pagemode=none"
+                    title="Interim Presentation"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">
+                  Personas and Hypothesis Testing Plan (January 6th, 2026)
+                </p>
+
+                <!-- <span class="status done">Done</span> -->
+              </div>
+              <div>
+                <div class="pdf-viewer" aria-label="PDF viewer">
+                  <iframe
+                    class="pdf-frame"
+                    src="/teams/pdf/team03-01.pdf#view=FitH&navpanes=0&pagemode=none"
+                    title="Personas and Hypothesis Testing Plan"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

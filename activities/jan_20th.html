@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 20th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 20th [Tue.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Preparing for Presentation</h2>
+          <span class="time">10:00 ~ 12:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span> Activity Topic : Preparing
+                for Final Presentation
+              </h4>
+              <ul>
+                <li>
+                  Problem & Solution: How clearly does the team define the
+                  problem and solution?
+                </li>
+                <li>Innovation: How original or innovative is the idea?</li>
+                <li>
+                  Business Plan: How strong is the business plan and
+                  sustainability model?
+                </li>
+                <li>Market Potential: How strong is the market opportunity?</li>
+                <li>Feasibility: How realistic and achievable is the plan?</li>
+                <li>
+                  Pitch & Presentation: How clear and engaging was the pitch?
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img20-1-1.jpg" loading="lazy" />
+              <img src="./images/img20-1-2.jpg" loading="lazy" />
+              <img src="./images/img20-1-3.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Final Presentation</h2>
+          <span class="time">13:00 ~ 17:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-bottom">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span> Presentation and Evaluation
+                Method: 10 minutes per team
+              </h4>
+              <ul>
+                <li>
+                  Presentation video prepared by each team: Approximately 3-5
+                  minutes
+                </li>
+                <li>Q&A with the judges: Approximately 5-7 minutes</li>
+              </ul>
+
+              <h4><span class="number-badge">2</span> Judges: 11 people</h4>
+              <ul>
+                <li>Charles Parker (Mdpane, Staff Software Engineer)</li>
+                <li>Torsten Grabs (Pacific Data Ventures, Owner)</li>
+                <li>
+                  Akshay Sonawane (Apple, Machine Learning Engineering Manager)
+                </li>
+                <li>Suneel Parthasarathy (Engineering Leader & Advisor)</li>
+                <li>Bill Yock (City of Bellevue, Data Analytics Manager)</li>
+                <li>Gajendra Babu Thokala (Apple, Senior Engineering Lead)</li>
+                <li>Daniel Lai (City of Bellevue, Smart Mobility Manager)</li>
+                <li>
+                  PradnyaDesh (Bellevue College, Chairperson of Bellevue
+                  College, Board of Trustees)
+                </li>
+                <li>
+                  Alfred Nehme (Bellevue College, Computer Science, Professor)
+                </li>
+                <li>Fatma Serce (Bellevue College, Dean of Science)</li>
+                <li>
+                  SeolwooPark (Jeju National University, Startup Education
+                  Center)
+                </li>
+              </ul>
+
+              <h4><span class="number-badge">3</span> Awards</h4>
+              <div class="mobile-scroll-hint">↔ Swipe to view details</div>
+              <div class="research-table-container">
+                <table class="award-table">
+                  <thead>
+                    <tr>
+                      <th class="col-award">Award</th>
+                      <th class="col-award-team">Team</th>
+                      <th class="col-award-title">Project Title</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- 1st Prize -->
+                    <tr>
+                      <td class="col-award">
+                        <div class="award-cell-content">
+                          <img
+                            src="/images/1st.png"
+                            class="award-icon"
+                            alt="1st"
+                            loading="lazy"
+                          />
+                          <span class="award-name">1st Prize</span>
+                        </div>
+                      </td>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 5</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >Crime Hotspot Analyzer & Safety Router</span
+                        >
+                      </td>
+                    </tr>
+
+                    <!-- 2nd Prize -->
+                    <tr>
+                      <td class="col-award" rowspan="2">
+                        <div class="award-cell-content">
+                          <img
+                            src="/images/2nd.png"
+                            class="award-icon"
+                            alt="2nd"
+                            loading="lazy"
+                          />
+                          <span class="award-name">2nd Prize</span>
+                        </div>
+                      </td>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 6</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >Smart Transit Reliability & Connectivity System</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 8</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >Smart Local Traffic Light Management System</span
+                        >
+                      </td>
+                    </tr>
+
+                    <!-- 3rd Prize -->
+                    <tr>
+                      <td class="col-award" rowspan="3">
+                        <div class="award-cell-content">
+                          <img
+                            src="/images/3rd.png"
+                            class="award-icon"
+                            alt="3rd"
+                            loading="lazy"
+                          />
+                          <span class="award-name">3rd Prize</span>
+                        </div>
+                      </td>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 3</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title">Smart Waste Management</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 2</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >Civic Innovation Idea Portal</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 7</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >Urban Sound Classification and Noise Monitoring</span
+                        >
+                      </td>
+                    </tr>
+
+                    <!-- Creativity -->
+                    <tr>
+                      <td class="col-award" rowspan="2">
+                        <div class="award-cell-content">
+                          <img
+                            src="/images/Creativity.png"
+                            class="award-icon"
+                            alt="Creativity"
+                            loading="lazy"
+                          />
+                          <span class="award-name">Creativity Award</span>
+                        </div>
+                      </td>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 10</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >Autonomous Vehicle Perception and Control Using
+                          Camera and LiDAR</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 4</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >Smart Streetlight Energy Optimization System</span
+                        >
+                      </td>
+                    </tr>
+
+                    <!-- Innovation -->
+                    <tr>
+                      <td class="col-award" rowspan="4">
+                        <div class="award-cell-content">
+                          <img
+                            src="/images/Innovation.png"
+                            class="award-icon"
+                            alt="Innovation"
+                            loading="lazy"
+                          />
+                          <span class="award-name">Innovation Award</span>
+                        </div>
+                      </td>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 5</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >Crime Hotspot Analyzer & Safety Router</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 1</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >Digital Twin for Civic Planning</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 9</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >A fire and security surveillance system based on
+                          ROS</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-award-team">
+                        <span class="winner-team-badge">Team 11</span>
+                      </td>
+                      <td class="col-award-title">
+                        <span class="winner-title"
+                          >AK-ACD (Ambiguous Clearance Detection) ADAS</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="sub-item-media" style="padding: 20px 0px 0px">
+              <img src="./images/img20-2-1.jpg" loading="lazy" />
+              <img src="./images/img20-2-2.jpg" loading="lazy" />
+              <img src="./images/img20-2-3.jpg" loading="lazy" />
+              <img src="./images/img20-2-4.jpg" loading="lazy" />
+              <img src="./images/img20-2-5.jpg" loading="lazy" />
+              <img src="./images/img20-2-6.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Networking Party</h2>
+          <span class="time">17:00 ~ 18:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Participants</h4>
+              <span class="description-text">
+                Professors and students from Korea University and Bellevue
+                College / Industrial personnel (92 people)
+              </span>
+
+              <h4><span class="number-badge">2</span> Event Content</h4>
+              <ul>
+                <li>Introducing Korean culture while sharing Korean food</li>
+                <li>
+                  Exchange contact information and discuss future exchange plans
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img20-3-2.jpg" loading="lazy" />
+              <img src="./images/img20-3-3.jpg" loading="lazy" />
+              <img src="./images/img20-3-1.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 08th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 8th [Thu.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Leadership meeting with the Provost</h2>
+          <span class="time">10:00 ~ 11:00 @B201</span>
+        </div>
+        <div class="card-body">
+          <!-- Item 1: No Image, Long Text -->
+          <div class="sub-item layout-merged-bottom">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Participants</h4>
+              <ul>
+                <li>
+                  <strong>Bellevue College:</strong> 13 members of the Bellevue
+                  College Academic Affairs Committee (Vice President Dr. Jessica
+                  Clark and 12 others)
+                </li>
+                <li>
+                  <strong>Korean Universities:</strong> Choongjae Im (Professor,
+                  Keimyung University), Cheolwoong Kang (Vice President,
+                  Industry-Academic Cooperation, Jeju National University),
+                  Byeongyeop Lee (Professor, Pai Chai University), etc.
+                </li>
+              </ul>
+
+              <h4><span class="number-badge">2</span> Presenter</h4>
+              <span class="description-text">
+                Professor Choong-jae Im, Keimyung University
+              </span>
+
+              <h4><span class="number-badge">3</span> Title</h4>
+              <span class="description-text">
+                Strategies for training skilled professionals through
+                project-based learning in the age of AI
+              </span>
+
+              <h4>
+                <span class="number-badge">4</span> Presentation and Conference
+                Contents
+              </h4>
+              <ul>
+                <li>
+                  Five Components of Educational Innovation in Advanced
+                  Educational Institutions
+                </li>
+                <li>
+                  Keimyung University and the Immersive Media Business Group's
+                  Efforts and Achievements in Educational Innovation
+                </li>
+                <li>
+                  Proposal for a "Global Education Innovation Hub" and
+                  Invitation to the 2026 Summer Program
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img08-1-1.jpg" loading="lazy" />
+              <img src="./images/img08-1-2.jpg" loading="lazy" />
+              <img src="./images/img08-1-3.jpg" loading="lazy" />
+              <img src="./images/img08-1-4.jpg" loading="lazy" />
+              <img src="./images/img08-1-5.jpg" loading="lazy" />
+              <img src="./images/img08-1-6.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Orientation & Campus Tour</h2>
+          <span class="time">11:00 ~ 12:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Orientation</h4>
+              <ul>
+                <li>
+                  <strong>Rankings & Recognition:</strong> Ranked #1 best
+                  community college in Washington and #13 in the nation for
+                  online learning.
+                </li>
+                <li>
+                  <strong>Programs:</strong> Offers a wide variety of degrees
+                  and certificates, including bachelor's degrees, transfer
+                  degrees (Associate of Arts), and professional/technical
+                  programs in fields like accounting, business management, and
+                  healthcare.
+                </li>
+                <li>
+                  <strong>Admissions:</strong> As an open-admission college, BC
+                  makes it straightforward for students to start their
+                  education, including those looking to transfer credits.
+                </li>
+                <li>
+                  <strong>Student Support:</strong> Provides specialized
+                  programs for students with disabilities and support for
+                  non-native English speakers through programs like I-BEST.
+                </li>
+                <li style="margin-bottom: 0">
+                  <strong>Campus Environment:</strong> Committed to a diverse,
+                  inclusive, safe, and sustainable campus, fostering a
+                  collaborative learning atmosphere.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sub-item layout-stacked">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">2</span> Campus Tour</h4>
+            </div>
+            <!-- Full width media panel for stacked layout -->
+            <div class="sub-item-media">
+              <img
+                src="./images/img08-2-1.png"
+                style="grid-row: span 2; object-position: left"
+                loading="lazy"
+              />
+              <img
+                src="./images/img08-2-2.jpg"
+                style="
+                  grid-column: span 2 !important;
+                  aspect-ratio: 21/9 !important;
+                "
+                loading="lazy"
+              />
+              <img src="./images/img08-2-3.png" loading="lazy" />
+              <img src="./images/img08-2-4.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Group Activity</h2>
+          <span class="time">13:00 ~ 17:00 @N201</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-bottom">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span> Activity Topic : Customer
+                Discovery
+              </h4>
+              <ul>
+                <li>
+                  "Is the problem the customer is experiencing truly a
+                  'life-threatening' pain point?"
+                </li>
+                <li>
+                  "What 'alternatives' are the customer currently using to solve
+                  this problem?"
+                </li>
+                <li>
+                  "Is the solution we're proposing valuable enough to change the
+                  customer's existing habits?"
+                </li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img08-3-1.jpg" loading="lazy" />
+              <img src="./images/img08-3-2.jpg" loading="lazy" />
+              <img src="./images/img08-3-3.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>XR Lab Experience</h2>
+          <span class="time">13:00 ~ 16:00 @D126</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-split">
+            <div class="sub-item-content">
+              <h4>
+                <span class="number-badge">1</span> Introducing the XR Lab
+              </h4>
+              <span class="description-text">
+                Founded in 2017, James Riggall and Bruce Wolcott co-teach the
+                first full-credit course on VR.
+              </span>
+
+              <h4><span class="number-badge">2</span> Experience the XR Lab</h4>
+              <ul>
+                <li>
+                  Educational software that provides high-quality interactive
+                  learning experiences reviewed by instructors and students
+                  before implementation with ongoing classroom support.
+                </li>
+                <li>A VR-equipped demo suite and workshop.</li>
+              </ul>
+            </div>
+
+            <div class="sub-item-media">
+              <img src="./images/img08-5-1.png" loading="lazy" />
+              <img src="./images/img08-5-2.png" loading="lazy" />
+              <img src="./images/img08-5-3.png" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

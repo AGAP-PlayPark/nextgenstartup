@@ -1,0 +1,393 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team 11 | AK-ACD (Ambiguous Clearance Detection) ADAS</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="header">
+          <div class="header-text">
+            <div class="kicker">Team 11</div>
+            <h1>AK-ACD (Ambiguous Clearance Detection) ADAS</h1>
+          </div>
+          <div>
+            <img
+              src="/images/Innovation.png"
+              alt="Innovation Award"
+              class="award-header-img"
+              title="Winner: Innovation Award"
+            />
+          </div>
+        </div>
+
+        <div class="body">
+          <!-- Project Overview -->
+          <h2 class="section-title">Project Overview</h2>
+          <div class="overview-grid">
+            <div class="block">
+              <h2>Description</h2>
+              <p>
+                This project focuses on developing a next-generation Advanced
+                Driver Assistance System (ADAS) that addresses safety challenges
+                faced by drivers of large vehicles in narrow or confined spaces,
+                such as alleyways and tight parking areas. By integrating
+                camera-based vision with mono depth map technology, the system
+                estimates available clearance and compares it with vehicle
+                dimensions and safety margins to provide intuitive, real-time
+                feedback to drivers. The proposed solution aims to reduce minor
+                collisions that can escalate into serious accidents or
+                operational delays, particularly for novice drivers and
+                commercial vehicle operators.
+              </p>
+            </div>
+
+            <div class="block">
+              <h2>Main Goals and Objectives</h2>
+              <p>
+                The goal of this project is to improve driving safety for large
+                and commercial vehicles in confined spaces by developing an ADAS
+                that accurately estimates available clearance using camera-based
+                depth information and provides intuitive feedback to drivers.
+              </p>
+            </div>
+
+            <div class="block">
+              <h2>Expected Output</h2>
+              <p>
+                The expected outcome is a prototype clearance-detection ADAS
+                algorithm with validated depth estimation performance, supported
+                by scenario-based demonstrations and technical documentation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project Members -->
+          <h2 class="section-title">Project Members</h2>
+
+          <!-- Advisors -->
+          <section class="member-section" aria-label="Advisors">
+            <h3 class="member-section-title">Advisors</h3>
+            <div class="member-grid">
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Kyujong Park</p>
+                    <p class="member-department">
+                      Automotive Engineering<br />(Kookmin University)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Frank Lee</p>
+                    <p class="member-department">
+                      Engineering Sciences<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Members -->
+          <section class="member-section" aria-label="Members">
+            <h3 class="member-section-title">Members</h3>
+            <div class="member-grid">
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Kuijin Chen</p>
+                    <p class="member-department">
+                      Engineering Sciences<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Sujan Chinta</p>
+                    <p class="member-department">
+                      Engineering Sciences<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Madeline Masters</p>
+                    <p class="member-department">
+                      Engineering Sciences<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Quan Giáp</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Amy Zhang</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Shahina Aqdodova</p>
+                    <p class="member-department">
+                      Computer Science<br />(Bellevue College)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Junghyun Lee</p>
+                    <p class="member-department">
+                      Mechanical Engineering<br />(Ajou University)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Minyeong Kang</p>
+                    <p class="member-department">
+                      Future Mobility Engineering<br />(Ajou University)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Yeonsil Kang</p>
+                    <p class="member-department">
+                      Automobile and IT Convergence<br />(Kookmin University)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Sebin Cho</p>
+                    <p class="member-department">
+                      Automobile and IT Convergence<br />(Kookmin University)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Sieun Lee</p>
+                    <p class="member-department">
+                      Digital Media Design<br />(Kaywon University of Art &
+                      Design)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="member-card">
+                <div class="member-top">
+                  <div class="avatar" data-avatar>
+                    <img src="/images/avatar.svg" />
+                  </div>
+                  <div class="member-info">
+                    <p class="member-name">Chanhan Jeong</p>
+                    <p class="member-department">
+                      Economics<br />(Jeju National University)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Weekly Progress Report (report format) -->
+          <div class="report-wrap" aria-label="Weekly progress report">
+            <div class="report-header">
+              <p class="report-title">Progress Report</p>
+              <div class="report-meta"></div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">Final Presentation (January 20th, 2026)</p>
+
+                <!-- <span class="status done">Done</span> -->
+              </div>
+              <div>
+                <div class="pdf-viewer" aria-label="Presentation video">
+                  <div class="pdf-viewer-header">
+                    <p class="pdf-viewer-title">Presentation Video (YouTube)</p>
+                  </div>
+
+                  <iframe
+                    class="pdf-frame"
+                    src="https://www.youtube.com/embed/O5ZYRUiqy30?rel=0"
+                    title="Final Presentation Video"
+                    frameborder="0"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                    "
+                    allowfullscreen
+                    loading="lazy"
+                    onload="sendHeight()"
+                  ></iframe>
+                </div>
+
+                <div class="pdf-viewer" aria-label="PDF viewer">
+                  <iframe
+                    class="pdf-frame"
+                    src="/teams/pdf/2026-01-20/team_11.pdf#view=FitH&navpanes=0&pagemode=none"
+                    title="Interim Presentation"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">
+                  Interim Presentation (January 14th, 2026)
+                </p>
+
+                <!-- <span class="status done">Done</span> -->
+              </div>
+              <div>
+                <div class="pdf-viewer" aria-label="PDF viewer">
+                  <iframe
+                    class="pdf-frame"
+                    src="/teams/pdf/2026-01-14/team_11.pdf#view=FitH&navpanes=0&pagemode=none"
+                    title="Interim Presentation"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">
+                  Personas and Hypothesis Testing Plan (January 6th, 2026)
+                </p>
+
+                <!-- <span class="status done">Done</span> -->
+              </div>
+              <div>
+                <div class="pdf-viewer" aria-label="PDF viewer">
+                  <iframe
+                    class="pdf-frame"
+                    src="/teams/pdf/team11-01.pdf#view=FitH&navpanes=0&pagemode=none"
+                    title="Personas and Hypothesis Testing Plan"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

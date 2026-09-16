@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Activity - Jan 07th</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function sendHeight() {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      }
+
+      window.addEventListener("load", sendHeight);
+
+      // PDF iframe이 로드되면 높이 재전송
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("iframe.pdf-frame").forEach((f) => {
+          f.addEventListener("load", sendHeight);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Jan. 7th [Wed.]</h1>
+      </header>
+
+      <!-- Activity 1 -->
+      <div class="activity-card">
+        <div class="card-header">
+          <h2>Meet and Greet session</h2>
+          <span class="time">14:00 ~ 16:00</span>
+        </div>
+        <div class="card-body">
+          <div class="sub-item layout-merged-bottom">
+            <div class="sub-item-content">
+              <h4><span class="number-badge">1</span> Find you Team</h4>
+              <ul>
+                <li>
+                  Look for the small paper on the desk , find your project title
+                  and set with your project team members.
+                </li>
+              </ul>
+
+              <h4>
+                <span class="number-badge">2</span> Team Introductions and Ice
+                Breaking
+              </h4>
+              <ul>
+                <li>
+                  Introduce each team member with four items: Name, Major,
+                  Something unique about you, What are you hoping to achieve at
+                  the end of this program?
+                </li>
+              </ul>
+
+              <h4>
+                <span class="number-badge">3</span> Share our team's project
+                progress
+              </h4>
+            </div>
+
+            <div
+              class="sub-item-media"
+              style="grid-template-columns: repeat(2, 1fr) !important"
+            >
+              <img src="./images/img07-1-1.jpg" loading="lazy" />
+              <img src="./images/img07-1-2.jpg" loading="lazy" />
+              <img src="./images/img07-1-3.png" loading="lazy" />
+              <img src="./images/img07-1-4.jpg" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

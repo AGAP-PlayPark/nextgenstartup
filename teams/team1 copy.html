@@ -1,0 +1,526 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team 1 | Smart Map with Smart Parking</title>
+    <style>
+      :root {
+        --primary: #6366f1;
+        --text: #0f172a;
+        --muted: rgba(15, 23, 42, 0.72);
+        --line: #eaeef6;
+        --bg-soft: #f8fafc;
+        --chip: rgba(99, 102, 241, 0.1);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        overflow: hidden;
+      }
+      body {
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial;
+        color: var(--text);
+        background: #fff;
+        height: fit-content;
+      }
+      .wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 1.25rem;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+        overflow: hidden;
+        background: white;
+      }
+      .header {
+        padding: 1.25rem 1.25rem 1rem;
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.12),
+          rgba(129, 140, 248, 0.12)
+        );
+        border-bottom: 1px solid var(--line);
+      }
+      .kicker {
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        color: rgba(47, 28, 106, 0.8);
+        font-size: 0.9rem;
+      }
+      h1 {
+        margin: 0.35rem 0 0 0;
+        font-size: 1.6rem;
+      }
+      .meta {
+        margin-top: 0.65rem;
+        color: rgba(15, 23, 42, 0.55);
+        font-size: 0.85rem;
+      }
+
+      .body {
+        padding: 1.25rem;
+      }
+      .section-title {
+        margin: 0 0 0.75rem 0;
+        font-size: 1.05rem;
+      }
+
+      /* Overview */
+      .overview-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+        margin-bottom: 1.25rem;
+      }
+      .block {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1rem;
+        background: var(--bg-soft);
+      }
+      .block h2 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1rem;
+      }
+      .block p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 0.95rem;
+      }
+
+      /* Members */
+      .member-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.9rem;
+      }
+      @media (max-width: 900px) {
+        .member-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 560px) {
+        .member-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .member-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: white;
+        overflow: hidden;
+      }
+      .member-top {
+        display: flex;
+        gap: 0.9rem;
+        padding: 0.95rem;
+        align-items: center;
+        background: linear-gradient(
+          180deg,
+          rgba(248, 250, 252, 1),
+          rgba(255, 255, 255, 1)
+        );
+      }
+      .avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 999px;
+        border: 1px solid #e7eaf3;
+        background: #fff;
+        overflow: hidden;
+        flex: 0 0 auto;
+        display: grid;
+        place-items: center;
+      }
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .avatar svg {
+        width: 34px;
+        height: 34px;
+        display: block;
+      }
+
+      .member-info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .member-name {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1.2;
+      }
+      .member-department {
+        margin: 0;
+        line-height: 1.2;
+        color: var(--muted);
+        font-size: 0.7rem;
+      }
+      .member-role {
+        width: fit-content;
+        margin: 0.25rem 0 0 0;
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.55rem;
+        border-radius: 999px;
+        background: var(--chip);
+        color: rgba(47, 28, 106, 0.9);
+        font-size: 0.85rem;
+        font-weight: 800;
+      }
+
+      .info-row {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 0.6rem;
+        align-items: baseline;
+      }
+      .label {
+        color: rgba(15, 23, 42, 0.55);
+        font-weight: 800;
+        font-size: 0.86rem;
+      }
+
+      /* Weekly report style */
+      .report-wrap {
+        margin-top: 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        background: white;
+      }
+      .report-header {
+        padding: 0.95rem 1rem;
+        background: #f1f5f9;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .report-title {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 900;
+      }
+      .report-meta {
+        color: rgba(15, 23, 42, 0.6);
+        font-size: 0.85rem;
+      }
+
+      .week {
+        padding: 1rem;
+        border-bottom: 1px solid #eef2f7;
+      }
+      .week:last-child {
+        border-bottom: 0;
+      }
+      .week-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.6rem;
+      }
+      .week-name {
+        margin: 0;
+        font-size: 0.98rem;
+        font-weight: 900;
+      }
+      .status {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.55rem;
+        border-radius: 999px;
+        font-weight: 900;
+        font-size: 0.8rem;
+        border: 1px solid transparent;
+        white-space: nowrap;
+      }
+      .done {
+        background: #ecfdf5;
+        color: #065f46;
+        border-color: #a7f3d0;
+      }
+      .doing {
+        background: #eff6ff;
+        color: #1d4ed8;
+        border-color: #bfdbfe;
+      }
+      .todo {
+        background: #fff7ed;
+        color: #9a3412;
+        border-color: #fed7aa;
+      }
+
+      .report-grid {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 0.7rem 1rem;
+      }
+      @media (max-width: 680px) {
+        .report-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .rg-label {
+        font-weight: 900;
+        color: rgba(15, 23, 42, 0.65);
+        font-size: 0.88rem;
+      }
+      .rg-value {
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 0.95rem;
+      }
+      .rg-value ul {
+        margin: 0.25rem 0 0 1.1rem;
+        padding: 0;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function () {
+        let message = { height: document.body.scrollHeight };
+
+        window.top.postMessage(message, "*");
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="header">
+          <div class="kicker">Team 1</div>
+          <h1>Digital Twin for Civic Planning</h1>
+        </div>
+
+        <div class="body">
+          <!-- Project Overview -->
+          <h2 class="section-title">Project Overview</h2>
+          <div class="overview-grid">
+            <div class="block">
+              <h2>Description</h2>
+              <p>
+                Develop a 3D digital twin of a section of Bellevue College (or
+                Bellevue) using open GIS data to visualize energy consumption,
+                traffic, or public Wi-Fi usage patterns for better campus(or
+                city) planning decisions.
+              </p>
+            </div>
+
+            <div class="block">
+              <h2>Expected Output</h2>
+              <p>
+                An interactive simulation or web-based dashboard showing
+                real-time or simulated civic data visualizations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project Members -->
+          <h2 class="section-title">Project Members</h2>
+          <div class="member-grid">
+            <!-- NOTE: 사진은 "링크(URL)"로 넣고, 깨지면 onerror로 SVG 출력 -->
+            <div class="member-card">
+              <div class="member-top">
+                <div class="avatar" data-avatar>
+                  <img src="./members/alex.jpg" />
+                </div>
+                <div class="member-info">
+                  <p class="member-name">Alex Kim</p>
+                  <p class="member-department">
+                    Computer Science<br />(Bellevue College)
+                  </p>
+                  <p class="member-role">PM</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-top">
+                <div class="avatar" data-avatar>
+                  <img src="./members/jamie.jpg" />
+                </div>
+                <div class="member-info">
+                  <p class="member-name">Jamie Park</p>
+                  <p class="member-department">
+                    Software Engineering<br />(Bellevue College)
+                  </p>
+                  <p class="member-role">Dev</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <div class="member-top">
+                <div class="avatar" data-avatar>
+                  <img src="./members/min.jpg" />
+                </div>
+                <div class="member-info">
+                  <p class="member-name">Min Lee</p>
+                  <p class="member-department">
+                    UX / Interaction<br />(Bellevue College)
+                  </p>
+                  <p class="member-role">Design</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weekly Progress Report (report format) -->
+          <div class="report-wrap" aria-label="Weekly progress report">
+            <div class="report-header">
+              <p class="report-title">Weekly Progress Report</p>
+              <div class="report-meta"></div>
+            </div>
+
+            <!-- Week item template -->
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">Week 1</p>
+                <span class="status done">Done</span>
+              </div>
+
+              <div class="report-grid">
+                <div class="rg-label">Objectives</div>
+                <div class="rg-value">
+                  Define problem scope and user flow for parking discovery &
+                  payment.
+                </div>
+
+                <div class="rg-label">Work Done</div>
+                <div class="rg-value">
+                  <ul>
+                    <li>
+                      Collected baseline requirements (map, search, payment,
+                      feedback).
+                    </li>
+                    <li>
+                      Drafted core user journey (arrive → search → navigate →
+                      pay → leave feedback).
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="rg-label">Outputs</div>
+                <div class="rg-value">
+                  Requirements list + initial wireframe sketch.
+                </div>
+
+                <div class="rg-label">Issues / Risks</div>
+                <div class="rg-value">
+                  Data source uncertainty (real-time parking availability vs
+                  simulation).
+                </div>
+
+                <div class="rg-label">Next Week Plan</div>
+                <div class="rg-value">
+                  Decide data strategy and create map UI wireframes.
+                </div>
+              </div>
+            </div>
+
+            <div class="week">
+              <div class="week-top">
+                <p class="week-name">Week 2</p>
+                <span class="status doing">In progress</span>
+              </div>
+
+              <div class="report-grid">
+                <div class="rg-label">Objectives</div>
+                <div class="rg-value">
+                  Implement map view prototype and define prediction approach.
+                </div>
+
+                <div class="rg-label">Work Done</div>
+                <div class="rg-value">
+                  <ul>
+                    <li>
+                      Set up basic map screen and parking marker rendering.
+                    </li>
+                    <li>
+                      Outlined ML feature candidates for availability
+                      prediction.
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="rg-label">Outputs</div>
+                <div class="rg-value">
+                  Map screen prototype + model approach note.
+                </div>
+
+                <div class="rg-label">Issues / Risks</div>
+                <div class="rg-value">
+                  Need consistent schema for sensor/simulated feeds.
+                </div>
+
+                <div class="rg-label">Next Week Plan</div>
+                <div class="rg-value">
+                  Connect simulated feed, add feedback UI, and run prediction
+                  baseline.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll("[data-avatar] img").forEach((img) => {
+        img.onerror = function () {
+          const avatar = this.parentElement;
+
+          avatar.innerHTML = `
+        <svg viewBox="0 0 64 64" fill="none"
+             xmlns="http://www.w3.org/2000/svg"
+             role="img" aria-label="Avatar">
+          <path
+            d="M32 34c8.284 0 15-6.716 15-15S40.284 4 32 4 17 10.716 17 19s6.716 15 15 15Z"
+            fill="#E8EDFF"
+            stroke="#6366F1"
+            stroke-width="2"
+          />
+          <path
+            d="M10 60c2.8-11.2 12.2-18 22-18s19.2 6.8 22 18"
+            fill="#E8EDFF"
+            stroke="#6366F1"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M22.5 19.5c2.2-3 5.5-4.8 9.5-4.8s7.3 1.8 9.5 4.8"
+            stroke="#818CF8"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      `;
+        };
+      });
+    </script>
+  </body>
+</html>
